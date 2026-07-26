@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
+
 import os
 import subprocess
 import sys
+import time
 
 # Configuration
 PIPELINE_DIR = "/home/ubuntu/ransomware_pipeline"
 MONITOR_SCRIPT = os.path.join(PIPELINE_DIR, "monitor.sh")
 CORPUS_BASE = "/home/ubuntu/goodware_corpus"
+MIN_RUNTIME = 50  # seconds
 
 def run_command(cmd):
     print(f"[*] Running: {' '.join(cmd)}")
@@ -22,65 +25,82 @@ def seed_corpus(folder_name, num_files=10000):
             f.write(f"Sensitive data block {i}\n" * 10)
 
 def run_goodware(name, binary, args, outdir_suffix, timeout=300):
-    """Runs a goodware binary through the monitor."""
+    """Runs a goodware binary through the monitor, ensuring at least MIN_RUNTIME seconds total."""
     corpus_path = os.path.join(CORPUS_BASE, name)
     outdir = os.path.join(PIPELINE_DIR, f"logs_goodware_{outdir_suffix}")
-    
+
     print(f"\n[🚀] Starting Goodware Capture: {name}")
-    
+
     cmd = [
         "sudo", "bash", MONITOR_SCRIPT, "run",
         binary,
         outdir,
         corpus_path,
-        "--num-files", "0", 
+        "--num-files", "0",
         "--timeout", str(timeout),
         "--no-gui",
         "--"
     ] + args
-    
-    try:
-        run_command(cmd)
-        print(f"[✅] {name} completed. Logs in {outdir}")
-    except subprocess.CalledProcessError as e:
-        print(f"[!] {name} failed: {e}")
+
+    overall_start = time.time()
+    run_count = 0
+
+    while True:
+        run_count += 1
+        elapsed = time.time() - overall_start
+        remaining = MIN_RUNTIME - elapsed
+
+        if run_count > 1:
+            print(f"[⏱] Only {elapsed:.1f}s elapsed — re-running to meet {MIN_RUNTIME}s minimum (run #{run_count})...")
+
+        try:
+            run_command(cmd)
+        except subprocess.CalledProcessError as e:
+            print(f"[!] {name} run #{run_count} failed: {e}")
+
+        elapsed = time.time() - overall_start
+        if elapsed >= MIN_RUNTIME:
+            break
+
+        # Small pause between re-runs to avoid hammering
+        time.sleep(1)
+
+    total = time.time() - overall_start
+    print(f"[✅] {name} completed after {run_count} run(s), {total:.1f}s total. Logs in {outdir}")
+
 
 if __name__ == "__main__":
     os.makedirs(CORPUS_BASE, exist_ok=True)
 
     # 1. OPENSSL SPEED (Sustained Crypto Activity - ~5-10 mins)
-    # This will generate hundreds of rows of pure computational syscalls
     seed_corpus("openssl_test", num_files=100)
     run_goodware(
-        name="openssl", 
-        binary="/usr/bin/openssl", 
+        name="openssl",
+        binary="/usr/bin/openssl",
         args=["speed", "-multi", "4", "aes-256-cbc"],
         outdir_suffix="openssl",
         timeout=600
     )
 
     # 2. FFMPEG TRANSCODING (Heavy I/O + CPU - ~5-10 mins)
-    # We create a dummy raw video file first
     seed_corpus("ffmpeg_test", num_files=1)
     raw_video = os.path.join(CORPUS_BASE, "ffmpeg_test", "input.raw")
     if not os.path.exists(raw_video):
         print("[*] Generating dummy raw video for ffmpeg...")
         run_command(["dd", "if=/dev/urandom", f"of={raw_video}", "bs=1M", "count=50"])
-    
+
     run_goodware(
         name="ffmpeg",
         binary="/usr/bin/ffmpeg",
-        args=["-y", "-f", "rawvideo", "-pixel_format", "rgb24", "-video_size", "320x240", 
+        args=["-y", "-f", "rawvideo", "-pixel_format", "rgb24", "-video_size", "320x240",
               "-i", raw_video, "-c:v", "libx264", "/tmp/output.mp4"],
         outdir_suffix="ffmpeg",
         timeout=600
     )
 
     # 3. PYTHON HTTP SERVER + WGET (Network + File Serving - ~2 mins)
-    # We start the server in the background, then wget files from it
     seed_corpus("http_test", num_files=1000)
-    
-    # Note: This is a two-step process. We'll use a wrapper script for this.
+
     wrapper_script = "/home/ubuntu/http_wrapper.sh"
     with open(wrapper_script, "w") as f:
         f.write(f"""#!/bin/bash
@@ -114,8 +134,8 @@ kill $SERVER_PID
     # 5. TAR ARCHIVING (High I/O - ~1-2 mins)
     seed_corpus("tar_test", num_files=10000)
     run_goodware(
-        name="tar", 
-        binary="/usr/bin/tar", 
+        name="tar",
+        binary="/usr/bin/tar",
         args=["-czf", "/tmp/backup.tar.gz", "-C", "/home/ubuntu/goodware_corpus/tar_test", "."],
         outdir_suffix="tar",
         timeout=300
