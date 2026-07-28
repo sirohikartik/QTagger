@@ -1,0 +1,17 @@
+{
+  "binary": "/home/jie-min/Downloads/e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957.elf",
+  "sha256": "e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957",
+  "binary_arch": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=1cad98489b3c0068d9bf9e14df29aacaf126f333, stripped",
+  "host_arch": "aarch64",
+  "used_qemu": 1,
+  "qemu_bin": "qemu-x86_64",
+  "tracer": "strace",
+  "gui_simulated": true,
+  "start_epoch": 1784971788.954805371,
+  "end_epoch": 1784971794.301143017,
+  "duration_sec": 5.346337646,
+  "target_pid": "7763",
+  "watch_dir": "/home/jie-min/ransomware_pipeline/test_corpus",
+  "bin_args": [],
+  "timeout": 120
+}

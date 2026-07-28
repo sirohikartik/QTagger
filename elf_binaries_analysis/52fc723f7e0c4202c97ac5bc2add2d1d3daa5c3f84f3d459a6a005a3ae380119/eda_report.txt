@@ -1,0 +1,802 @@
+EDA Report
+File    : /Users/jieminphan/Downloads/QIntern logs/52fc723f7e0c4202c97ac5bc2add2d1d3daa5c3f84f3d459a6a005a3ae380119/features.csv
+
+────────────────────────────────────────────────────────────────────────
+  OVERVIEW
+────────────────────────────────────────────────────────────────────────
+
+  Rows              : 272
+  Columns           : 31
+  Duplicate rows    : 0  (0.00%)
+  Total cells       : 8,432
+  Total nulls       : 0  (0.00% of all cells)
+  Numeric columns   : 31
+  Categorical cols  : 0
+
+────────────────────────────────────────────────────────────────────────
+  NULLITY SUMMARY  (columns with any nulls)
+────────────────────────────────────────────────────────────────────────
+
+  No null values found across all columns.
+
+────────────────────────────────────────────────────────────────────────
+  SPARSITY SUMMARY  (zero counts in numeric columns)
+────────────────────────────────────────────────────────────────────────
+
+  Column                                        Zero Count   Zero %
+  ───────────────────────────────────────────── ──────────  ───────
+  rw_volume_ratio                                      272  100.00%  ← highly sparse
+  file_deletion_rate                                   272  100.00%  ← highly sparse
+  file_rename_rate                                     272  100.00%  ← highly sparse
+  target_extension_velocity                            272  100.00%  ← highly sparse
+  urandom_bytes_per_sec                                272  100.00%  ← highly sparse
+  net_packet_rate                                      272  100.00%  ← highly sparse
+  net_byte_volume                                      272  100.00%  ← highly sparse
+  unique_dest_ip_rate                                  272  100.00%  ← highly sparse
+  dns_query_rate                                       272  100.00%  ← highly sparse
+  connection_failure_rate                              272  100.00%  ← highly sparse
+  syscall_sequence_entropy                             272  100.00%  ← highly sparse
+  dir_ops                                              272  100.00%  ← highly sparse
+  drop_rate                                            272  100.00%  ← highly sparse
+  ransom_note_hits                                     272  100.00%  ← highly sparse
+  library_call_rate_openssl                            272  100.00%  ← highly sparse
+  vmrss_kb                                             272  100.00%  ← highly sparse
+  mean_file_entropy                                    272  100.00%  ← highly sparse
+  time_to_first_encryption_s                           272  100.00%  ← highly sparse
+  encryption_slope                                     272  100.00%  ← highly sparse
+  file_entropy_delta                                   272  100.00%  ← highly sparse
+  bytes_written_per_sec                                271   99.63%  ← highly sparse
+  futex_rate                                           271   99.63%  ← highly sparse
+  child_spawn_rate                                     271   99.63%  ← highly sparse
+  execve_rate                                          271   99.63%  ← highly sparse
+  io_burstiness_std                                    270   99.26%  ← highly sparse
+  seq_vs_random_disk_ratio                             268   98.53%  ← highly sparse
+  bytes_read_per_sec                                   267   98.16%  ← highly sparse
+  mprotect_rate                                        263   96.69%  ← highly sparse
+  mmap_brk_rate                                        245   90.07%  ← highly sparse
+  window_idx                                             1    0.37%
+  window_start_s                                         1    0.37%
+
+────────────────────────────────────────────────────────────────────────
+  CONSTANT / NEAR-CONSTANT COLUMNS
+────────────────────────────────────────────────────────────────────────
+
+  bytes_read_per_sec                                       near-constant (5 unique)
+  bytes_written_per_sec                                    near-constant (2 unique)
+  rw_volume_ratio                                          CONSTANT
+  file_deletion_rate                                       CONSTANT
+  file_rename_rate                                         CONSTANT
+  target_extension_velocity                                CONSTANT
+  seq_vs_random_disk_ratio                                 near-constant (2 unique)
+  urandom_bytes_per_sec                                    CONSTANT
+  mprotect_rate                                            near-constant (2 unique)
+  futex_rate                                               near-constant (2 unique)
+  net_packet_rate                                          CONSTANT
+  net_byte_volume                                          CONSTANT
+  unique_dest_ip_rate                                      CONSTANT
+  dns_query_rate                                           CONSTANT
+  connection_failure_rate                                  CONSTANT
+  child_spawn_rate                                         near-constant (2 unique)
+  execve_rate                                              near-constant (2 unique)
+  syscall_sequence_entropy                                 CONSTANT
+  io_burstiness_std                                        near-constant (2 unique)
+  dir_ops                                                  CONSTANT
+  drop_rate                                                CONSTANT
+  ransom_note_hits                                         CONSTANT
+  library_call_rate_openssl                                CONSTANT
+  vmrss_kb                                                 CONSTANT
+  mean_file_entropy                                        CONSTANT
+  time_to_first_encryption_s                               CONSTANT
+  encryption_slope                                         CONSTANT
+  file_entropy_delta                                       CONSTANT
+
+────────────────────────────────────────────────────────────────────────
+  PER-COLUMN DISTRIBUTIONS
+────────────────────────────────────────────────────────────────────────
+
+
+  ┌─ [window_idx]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 1  (0.37%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 135.5
+  │  std          : 78.6638
+  │  skewness     : 0.0000  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : -1.2132  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 2.71
+  │  p5           : 13.55
+  │  p25  (Q1)    : 67.75
+  │  p50  (med)   : 135.5
+  │  p75  (Q3)    : 203.25
+  │  p95          : 257.45
+  │  p99          : 268.29
+  │  max  (p100)  : 271
+  │  unique vals  : 272
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [window_start_s]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 1  (0.37%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 13.55
+  │  std          : 7.86638
+  │  skewness     : 0.0000  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : -1.2132  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0.271
+  │  p5           : 1.355
+  │  p25  (Q1)    : 6.775
+  │  p50  (med)   : 13.55
+  │  p75  (Q3)    : 20.325
+  │  p95          : 25.745
+  │  p99          : 26.829
+  │  max  (p100)  : 27.1
+  │  unique vals  : 272
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [bytes_read_per_sec]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 267  (98.16%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 108.456
+  │  std          : 1009.46
+  │  skewness     : 9.4123  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 87.7104  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 2867.2
+  │  max  (p100)  : 10240
+  │  unique vals  : 5
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [bytes_written_per_sec]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 271  (99.63%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 4.11765
+  │  std          : 67.91
+  │  skewness     : 16.3110  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 265.0220  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 1120
+  │  unique vals  : 2
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [rw_volume_ratio]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0.0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [file_deletion_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [file_rename_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [target_extension_velocity]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [seq_vs_random_disk_ratio]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 268  (98.53%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0.147059
+  │  std          : 1.20595
+  │  skewness     : 8.0188  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 62.5304  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 10
+  │  max  (p100)  : 10
+  │  unique vals  : 2
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [urandom_bytes_per_sec]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [mmap_brk_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 245  (90.07%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 1.0671e+06
+  │  std          : 1.15047e+07
+  │  skewness     : 11.4001  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 128.9286  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 15974.4
+  │  p99          : 8.41052e+06
+  │  max  (p100)  : 1.34218e+08
+  │  unique vals  : 17
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [mprotect_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 263  (96.69%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0.330882
+  │  std          : 1.79197
+  │  skewness     : 5.1920  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 25.0491  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 10
+  │  max  (p100)  : 10
+  │  unique vals  : 2
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [futex_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 271  (99.63%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0.0367647
+  │  std          : 0.606339
+  │  skewness     : 16.3110  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 265.0220  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 10
+  │  unique vals  : 2
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [net_packet_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [net_byte_volume]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [unique_dest_ip_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [dns_query_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [connection_failure_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [child_spawn_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 271  (99.63%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0.0367647
+  │  std          : 0.606339
+  │  skewness     : 16.3110  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 265.0220  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 10
+  │  unique vals  : 2
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [execve_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 271  (99.63%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0.0367647
+  │  std          : 0.606339
+  │  skewness     : 16.3110  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 265.0220  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 10
+  │  unique vals  : 2
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [syscall_sequence_entropy]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : -0
+  │  p5           : -0
+  │  p25  (Q1)    : -0
+  │  p50  (med)   : -0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0.0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [io_burstiness_std]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 270  (99.26%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0.329412
+  │  std          : 3.83447
+  │  skewness     : 11.4693  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : 130.0239  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 44.8
+  │  unique vals  : 2
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [dir_ops]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [drop_rate]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [ransom_note_hits]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [library_call_rate_openssl]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [vmrss_kb]
+  │  dtype        : int64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [mean_file_entropy]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0.0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [time_to_first_encryption_s]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0.0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [encryption_slope]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0.0)
+  └────────────────────────────────────────────────────────────────────
+
+  ┌─ [file_entropy_delta]
+  │  dtype        : float64
+  │  non-null     : 272  (100.00%)
+  │  null         : 0  (0.00%)
+  │  zeros        : 272  (100.00%)  ← sparsity
+  │  negatives    : 0  (0.00%)
+  │  mean         : 0
+  │  std          : 0
+  │  skewness     : nan  (0=symmetric, >1 right-skewed)
+  │  kurtosis     : nan  (0=normal tails)
+  │  min  (p0)    : 0
+  │  p1           : 0
+  │  p5           : 0
+  │  p25  (Q1)    : 0
+  │  p50  (med)   : 0
+  │  p75  (Q3)    : 0
+  │  p95          : 0
+  │  p99          : 0
+  │  max  (p100)  : 0
+  │  unique vals  : 1
+  │  ⚠ CONSTANT column (value = 0.0)
+  └────────────────────────────────────────────────────────────────────
+
+════════════════════════════════════════════════════════════════════════
+  End of Report
+════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,5 @@
+
+/home/jie-min/Downloads/5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9.elf:     file format elf64-little
+
+objdump: can't disassemble for architecture UNKNOWN!
+

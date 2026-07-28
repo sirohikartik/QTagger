@@ -1,0 +1,405 @@
+8270  17:45:07.292127 execve("/usr/bin/qemu-x86_64", ["qemu-x86_64", "-L", "/usr/x86_64-linux-gnu/", "/home/jie-min/Downloads/4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d.elf"], 0xffffca969fa8 /* 20 vars */) = 0 <0.000410>
+8270  17:45:07.295466 brk(NULL)         = 0xaaaae8d5e000 <0.000003>
+8270  17:45:07.295485 brk(0xaaaae8d5ec80) = 0xaaaae8d5ec80 <0.000003>
+8270  17:45:07.295501 set_tid_address(0xaaaae8d5e448) = 8270 <0.000003>
+8270  17:45:07.295772 set_robust_list(0xaaaae8d5e100, 24) = 0 <0.000002>
+8270  17:45:07.295780 rseq(0xaaaae8d5e900, 0x21, 0, 0xd428bc00) = 0 <0.000002>
+8270  17:45:07.296214 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000002>
+8270  17:45:07.296230 getrandom("\x80\x92\x15\x15\x5f\x51\xef\x64", 8, GRND_NONBLOCK) = 8 <0.000002>
+8270  17:45:07.296296 readlinkat(AT_FDCWD, "/proc/self/exe", "/usr/bin/qemu-x86_64", 4096) = 20 <0.000011>
+8270  17:45:07.296789 brk(NULL)         = 0xaaaae8d5ec80 <0.000001>
+8270  17:45:07.296796 brk(0xaaaae8e00000) = 0xaaaae8e00000 <0.000003>
+8270  17:45:07.297018 mprotect(0xe7c42802b000, 151552, PROT_READ) = 0 <0.000007>
+8270  17:45:07.297489 rt_sigprocmask(SIG_SETMASK, ~[ILL FPE SEGV RTMIN RT_1], [], 8) = 0 <0.000002>
+8270  17:45:07.297499 rt_sigaction(SIGRT_1, {sa_handler=0xe7c427ec1860, sa_mask=[], sa_flags=SA_ONSTACK|SA_RESTART|SA_SIGINFO}, NULL, 8) = 0 <0.000002>
+8270  17:45:07.297507 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0 <0.000001>
+8270  17:45:07.297515 mmap(NULL, 8454144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0xe7c4273f0000 <0.000003>
+8270  17:45:07.297524 madvise(0xe7c4273f0000, 65536, MADV_GUARD_INSTALL) = 0 <0.000004>
+8270  17:45:07.297538 rt_sigprocmask(SIG_BLOCK, ~[], ~[ILL FPE KILL SEGV STOP RTMIN RT_1], 8) = 0 <0.000002>
+8270  17:45:07.297546 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0xe7c427bff7c8, parent_tid=0xe7c427bff470, exit_signal=0, stack=0xe7c4273f0000, stack_size=0x80ec80, tls=0xe7c427bffac0} => {parent_tid=[8271]}, 88) = 8271 <0.000022>
+8270  17:45:07.297611 rt_sigprocmask(SIG_SETMASK, ~[ILL FPE KILL SEGV STOP RTMIN RT_1], NULL, 8) = 0 <0.000002>
+8270  17:45:07.297619 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000001>
+8271  17:45:07.297786 rseq(0xe7c427bffc80, 0x21, 0, 0xd428bc00) = 0 <0.000002>
+8271  17:45:07.297793 set_robust_list(0xe7c427bff480, 24) = 0 <0.000001>
+8271  17:45:07.297799 rt_sigprocmask(SIG_SETMASK, ~[ILL FPE KILL SEGV STOP RTMIN RT_1], NULL, 8) = 0 <0.000001>
+8271  17:45:07.297807 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c41f200000 <0.000004>
+8271  17:45:07.297816 munmap(0xe7c41f200000, 14680064) = 0 <0.000004>
+8271  17:45:07.297824 munmap(0xe7c424000000, 52428800) = 0 <0.000003>
+8271  17:45:07.297832 mprotect(0xe7c420000000, 2097152, PROT_READ|PROT_WRITE) = 0 <0.000002>
+8271  17:45:07.297839 madvise(0xe7c420000000, 2097152, MADV_HUGEPAGE) = 0 <0.000002>
+8271  17:45:07.297868 futex(0xe7c4280a80a0, FUTEX_WAIT, 4294967295, NULL <unfinished ...>
+8270  17:45:07.300018 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000002>
+8270  17:45:07.300030 uname({sysname="Linux", nodename="jie-min-VMware20-1", ...}) = 0 <0.000002>
+8270  17:45:07.300039 openat(AT_FDCWD, "/home/jie-min/Downloads/4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d.elf", O_RDONLY) = 3 <0.000005>
+8270  17:45:07.300050 readlinkat(AT_FDCWD, "/home", 0xffffc83642a0, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.300077 readlinkat(AT_FDCWD, "/home/jie-min", 0xffffc83642a0, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.300085 readlinkat(AT_FDCWD, "/home/jie-min/Downloads", 0xffffc83642a0, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.300092 readlinkat(AT_FDCWD, "/home/jie-min/Downloads/4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d.elf", 0xffffc83642a0, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.300100 lseek(3, 0, SEEK_SET) = 0 <0.000002>
+8270  17:45:07.300116 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0>\0\1\0\0\0\354]@\0\0\0\0\0@\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0\0\0\0\0", 64) = 64 <0.000003>
+8270  17:45:07.300125 lseek(3, 0, SEEK_SET) = 0 <0.000001>
+8270  17:45:07.300721 mmap(NULL, 528384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c4281d1000 <0.000003>
+8270  17:45:07.300894 sysinfo({uptime=1060, loads=[33440, 19488, 13056], totalram=5645959168, freeram=458797056, sharedram=113946624, bufferram=23146496, totalswap=3239047168, freeswap=3238416384, procs=1001, totalhigh=0, freehigh=0, mem_unit=1}) = 0 <0.000005>
+8270  17:45:07.300908 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c418000000 <0.000002>
+8270  17:45:07.300915 madvise(0xe7c418000000, 134217728, MADV_HUGEPAGE) = 0 <0.000002>
+8270  17:45:07.300924 mprotect(0xe7c418000000, 134213632, PROT_READ|PROT_WRITE|PROT_EXEC) = 0 <0.000006>
+8270  17:45:07.300940 brk(0xaaaae9000000) = 0xaaaae9000000 <0.000002>
+8270  17:45:07.300947 madvise(0xaaaae8e00000, 2097152, MADV_HUGEPAGE) = 0 <0.000002>
+8270  17:45:07.301280 getrandom(NULL, 0, 0) = 0 <0.000002>
+8270  17:45:07.301289 openat(AT_FDCWD, "/proc/sys/vm/mmap_min_addr", O_RDONLY) = 4 <0.000005>
+8270  17:45:07.301302 fstat(4, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0 <0.000002>
+8270  17:45:07.301311 read(4, "32768\n", 1024) = 6 <0.000005>
+8270  17:45:07.301327 lseek(4, 0, SEEK_CUR) = 6 <0.000002>
+8270  17:45:07.301334 lseek(4, 5, SEEK_SET) = 5 <0.000001>
+8270  17:45:07.301340 close(4)          = 0 <0.000002>
+8270  17:45:07.301347 gettid()          = 8270 <0.000001>
+8270  17:45:07.301353 fstat(3, {st_mode=S_IFREG|0755, st_size=385634, ...}) = 0 <0.000002>
+8270  17:45:07.301360 geteuid()         = 0 <0.000001>
+8270  17:45:07.301366 getegid()         = 0 <0.000001>
+8270  17:45:07.301372 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0>\0\1\0\0\0\354]@\0\0\0\0\0@\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0\0\0\0\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0@\0\0\0\0\0@\0@\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0p\2\0\0\0\0\0\0p\2@\0\0\0\0\0p\2@\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\1\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\344\263\5\0\0\0\0\0\344\263\5\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\240\274\5\0\0\0\0\0\240\274e\0\0\0\0\0"..., 1024) = 1024 <0.000002>
+8270  17:45:07.301381 mmap(0x400000, 2495704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE|MAP_FIXED_NOREPLACE, -1, 0) = 0x400000 <0.000003>
+8270  17:45:07.301389 munmap(0x400000, 2495704) = 0 <0.000002>
+8270  17:45:07.301397 mmap(0x400000, 2498560, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE|MAP_FIXED_NOREPLACE, -1, 0) = 0x400000 <0.000002>
+8270  17:45:07.301404 mmap(0x400000, 376832, PROT_READ, MAP_PRIVATE|MAP_FIXED, 3, 0) = 0x400000 <0.000004>
+8270  17:45:07.301413 mmap(0x65b000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x5b000) = 0x65b000 <0.000009>
+8270  17:45:07.301430 mmap(0x65f000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x65f000 <0.000003>
+8270  17:45:07.301437 close(3)          = 0 <0.000001>
+8270  17:45:07.301444 mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c426bef000 <0.000002>
+8270  17:45:07.301451 mprotect(0xe7c426bef000, 4096, PROT_NONE) = 0 <0.000003>
+8270  17:45:07.301462 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib64/ld-linux-x86-64.so.2", F_OK) = 0 <0.000841>
+8270  17:45:07.302315 openat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib64/ld-linux-x86-64.so.2", O_RDONLY) = 3 <0.000003>
+8270  17:45:07.302329 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\3003\2\0\0\0\0\0@\0\0\0\0\0\0\0X\331\3\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\26\0\25\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0@\r\0\0\0\0\0\0@\r\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\20\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\20\0\0\0\0\0\0005\342\2\0\0\0\0\0005\342\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\3\0\0\0\0\0\0\0\3\0\0\0\0\0\0\0\3\0\0\0\0\0(\247\0\0\0\0\0\0(\247\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\6\0\0\0\240\265\3\0\0\0\0\0\240\265\3\0\0\0\0\0"..., 1024) = 1024 <0.000468>
+8270  17:45:07.302809 mmap(NULL, 258048, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0xe7c428192000 <0.000003>
+8270  17:45:07.302819 mmap(0xe7c428192000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED, 3, 0) = 0xe7c428192000 <0.000004>
+8270  17:45:07.302829 mmap(0xe7c428193000, 192512, PROT_READ, MAP_PRIVATE|MAP_FIXED, 3, 0x1000) = 0xe7c428193000 <0.000006>
+8270  17:45:07.302841 mmap(0xe7c4281c2000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED, 3, 0x30000) = 0xe7c4281c2000 <0.000004>
+8270  17:45:07.302851 mmap(0xe7c4281cd000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x3b000) = 0xe7c4281cd000 <0.000003>
+8270  17:45:07.303062 mmap(0xe7c4281d0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xe7c4281d0000 <0.000003>
+8270  17:45:07.303072 pread64(3, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\v\0\0\0\7\0\0\0\2\0\0\0\0\0\0\0\250\2\0\0\0\0\0\0\250\2\0\0\0\0\0\0$\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\"\0\0\0\5\0\0\0\2\0\0\0\0\0\0\0\320\2\0\0\0\0\0\0\320\2\0\0\0\0\0\08\1\0\0\0\0\0\0\4\0\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\0\0\0\0\36\0\0\0\366\377\377o\2\0\0\0\0\0\0\0\10\4\0\0\0\0\0\0\10\4\0\0\0\0\0\0\\\1\0\0\0\0\0\0\4\0\0\0\0\0\0\0\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 1408, 252248) = 1408 <0.000002>
+8270  17:45:07.303081 close(3)          = 0 <0.000001>
+8270  17:45:07.303087 mmap(NULL, 4096, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0xe7c428191000 <0.000003>
+8270  17:45:07.303095 mmap(0xe7c428191000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xe7c428191000 <0.000002>
+8270  17:45:07.303109 mprotect(0xe7c428191000, 4096, PROT_READ|PROT_WRITE) = 0 <0.000002>
+8270  17:45:07.303118 close(-1)         = -1 EBADF (Bad file descriptor) <0.000001>
+8270  17:45:07.303125 mprotect(0xe7c428191000, 4096, PROT_READ) = 0 <0.000002>
+8270  17:45:07.303133 getrandom("\x4c\xc1\xb8\x69\xcc\x76\xa0\xf5\xf4\x64\xe1\xdc\x15\x33\xca\x9d", 16, 0) = 16 <0.000002>
+8270  17:45:07.303141 getuid()          = 0 <0.000001>
+8270  17:45:07.303147 geteuid()         = 0 <0.000001>
+8270  17:45:07.303153 getgid()          = 0 <0.000002>
+8270  17:45:07.303158 getegid()         = 0 <0.000001>
+8270  17:45:07.303394 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0 <0.000002>
+8270  17:45:07.303402 rt_sigaction(SIGHUP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303410 rt_sigaction(SIGINT, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303417 rt_sigaction(SIGQUIT, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303425 rt_sigaction(SIGILL, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303432 rt_sigaction(SIGTRAP, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303440 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0 <0.000002>
+8270  17:45:07.303447 rt_sigaction(SIGABRT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303454 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000001>
+8270  17:45:07.303460 rt_sigaction(SIGRT_3, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, NULL, 8) = 0 <0.000001>
+8270  17:45:07.303467 rt_sigaction(SIGBUS, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303474 rt_sigaction(SIGFPE, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303481 rt_sigaction(SIGKILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303490 rt_sigaction(SIGUSR1, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303496 rt_sigaction(SIGSEGV, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303503 rt_sigaction(SIGUSR2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303509 rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303516 rt_sigaction(SIGALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303522 rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303529 rt_sigaction(SIGSTKFLT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303535 rt_sigaction(SIGCHLD, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303541 rt_sigaction(SIGCONT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303548 rt_sigaction(SIGSTOP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303554 rt_sigaction(SIGTSTP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303560 rt_sigaction(SIGTTIN, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303566 rt_sigaction(SIGTTOU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303573 rt_sigaction(SIGURG, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303579 rt_sigaction(SIGXCPU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303585 rt_sigaction(SIGXFSZ, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303591 rt_sigaction(SIGVTALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303598 rt_sigaction(SIGPROF, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303604 rt_sigaction(SIGWINCH, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303610 rt_sigaction(SIGIO, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303617 rt_sigaction(SIGPWR, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303623 rt_sigaction(SIGSYS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303629 rt_sigaction(SIGRT_4, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303635 rt_sigaction(SIGRT_5, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303642 rt_sigaction(SIGRT_6, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303648 rt_sigaction(SIGRT_7, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303654 rt_sigaction(SIGRT_8, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303661 rt_sigaction(SIGRT_9, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303667 rt_sigaction(SIGRT_10, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303673 rt_sigaction(SIGRT_11, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303679 rt_sigaction(SIGRT_12, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303685 rt_sigaction(SIGRT_13, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303691 rt_sigaction(SIGRT_14, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303698 rt_sigaction(SIGRT_15, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303704 rt_sigaction(SIGRT_16, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303711 rt_sigaction(SIGRT_17, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303717 rt_sigaction(SIGRT_18, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303724 rt_sigaction(SIGRT_19, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303730 rt_sigaction(SIGRT_20, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303736 rt_sigaction(SIGRT_21, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303743 rt_sigaction(SIGRT_22, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303749 rt_sigaction(SIGRT_23, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303755 rt_sigaction(SIGRT_24, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303761 rt_sigaction(SIGRT_25, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303768 rt_sigaction(SIGRT_26, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303774 rt_sigaction(SIGRT_27, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303780 rt_sigaction(SIGRT_28, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303786 rt_sigaction(SIGRT_29, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303793 rt_sigaction(SIGRT_30, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303799 rt_sigaction(SIGRT_31, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303805 rt_sigaction(SIGRT_32, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000001>
+8270  17:45:07.303811 rt_sigaction(SIGRT_2, {sa_handler=0xe7c427d30e60, sa_mask=~[RTMIN RT_1], sa_flags=SA_SIGINFO}, NULL, 8) = 0 <0.000002>
+8270  17:45:07.304201 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428190000 <0.000003>
+8270  17:45:07.304212 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c42818f000 <0.000002>
+8270  17:45:07.304651 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.304677 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.304907 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.304944 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.305290 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.305297 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.305324 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.305474 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.305753 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.306390 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.307187 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.307261 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.307279 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.307742 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.307749 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.307756 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.307924 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.308053 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c42818d000 <0.000003>
+8270  17:45:07.308350 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/etc/ld.so.preload", F_OK) = -1 ENOENT (No such file or directory) <0.000012>
+8270  17:45:07.308371 faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.308803 readlinkat(AT_FDCWD, "/etc", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.308812 readlinkat(AT_FDCWD, "/etc/ld.so.cache", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.308821 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/etc/ld.so.cache", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.308829 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000003>
+8270  17:45:07.308852 fstat(3, {st_mode=S_IFREG|0644, st_size=70405, ...}) = 0 <0.000002>
+8270  17:45:07.308884 mmap(NULL, 73728, PROT_READ, MAP_PRIVATE, 3, 0) = 0xe7c42817b000 <0.000003>
+8270  17:45:07.308901 close(3)          = 0 <0.000002>
+8270  17:45:07.309195 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000002>
+8270  17:45:07.309204 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309212 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309219 readlinkat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000005>
+8270  17:45:07.309230 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000003>
+8270  17:45:07.309239 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309290 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309297 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309326 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000002>
+8270  17:45:07.309334 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309341 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309348 readlinkat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309355 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309363 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309371 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309378 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309388 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000002>
+8270  17:45:07.309396 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309402 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309409 readlinkat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309416 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/x86_64-linux-gnu/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309423 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309431 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/x86_64-linux-gnu/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309438 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309462 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309470 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309476 readlinkat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000001>
+8270  17:45:07.309483 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000003>
+8270  17:45:07.309492 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309499 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309506 newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309514 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309521 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309527 readlinkat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000001>
+8270  17:45:07.309534 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000001>
+8270  17:45:07.309541 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309549 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309556 newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000001>
+8270  17:45:07.309563 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309570 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309576 readlinkat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000001>
+8270  17:45:07.309583 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309590 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309597 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309604 newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000001>
+8270  17:45:07.309616 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000002>
+8270  17:45:07.309624 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309630 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.309637 readlinkat(AT_FDCWD, "/usr/lib/glibc-hwcaps", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309644 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/glibc-hwcaps/x86-64-v3/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000003>
+8270  17:45:07.309653 openat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v3/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309661 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/glibc-hwcaps/x86-64-v3/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309669 newfstatat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v3/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309676 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000002>
+8270  17:45:07.309683 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309690 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309697 readlinkat(AT_FDCWD, "/usr/lib/glibc-hwcaps", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000001>
+8270  17:45:07.309703 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/glibc-hwcaps/x86-64-v2/libpthread.so.0", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309710 openat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v2/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309718 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/glibc-hwcaps/x86-64-v2/", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309724 newfstatat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v2/", 0xffffc83643f0, 0) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.309732 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000002>
+8270  17:45:07.309739 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309745 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000001>
+8270  17:45:07.309752 readlinkat(AT_FDCWD, "/usr/lib/libpthread.so.0", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000003>
+8270  17:45:07.309760 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/libpthread.so.0", F_OK) = 0 <0.000004>
+8270  17:45:07.309770 openat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3 <0.000002>
+8270  17:45:07.309787 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H1\0\0\0\0\0\0\0\0\0\0@\08\0\f\0@\0\34\0\33\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\230\v\0\0\0\0\0\0\230\v\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\20\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\20\0\0\0\0\0\0\25\1\0\0\0\0\0\0\25\1\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0 \0\0\0\0\0\0\0 \0\0\0\0\0\0\0 \0\0\0\0\0\0\350\0\0\0\0\0\0\0\350\0\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\6\0\0\0\230-\0\0\0\0\0\0\230=\0\0\0\0\0\0"..., 832) = 832 <0.000869>
+8270  17:45:07.310805 fstat(3, {st_mode=S_IFREG|0644, st_size=14408, ...}) = 0 <0.000002>
+8270  17:45:07.311177 mmap(NULL, 20480, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xe7c428176000 <0.000004>
+8270  17:45:07.311241 mmap(0xe7c428177000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0xe7c428177000 <0.000005>
+8270  17:45:07.311261 mmap(0xe7c428178000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0xe7c428178000 <0.000004>
+8270  17:45:07.311271 mmap(0xe7c428179000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0xe7c428179000 <0.000003>
+8270  17:45:07.311566 close(3)          = 0 <0.000002>
+8270  17:45:07.311759 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000002>
+8270  17:45:07.311769 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.311778 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.311786 readlinkat(AT_FDCWD, "/usr/lib/libc.so.6", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000004>
+8270  17:45:07.311797 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/libc.so.6", F_OK) = 0 <0.000004>
+8270  17:45:07.311808 openat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000003>
+8270  17:45:07.311817 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0@\0\0\0\0\0\0\0X2!\0\0\0\0\0\0\0\0\0@\08\0\17\0@\0>\0=\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\200g\36\0\0\0\0\0\200g\36\0\0\0\0\0\200g\36\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\370y\2\0\0\0\0\0\370y\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\200\2\0\0\0\0\0\0\200\2\0\0\0\0\0"..., 832) = 832 <0.000231>
+8270  17:45:07.312197 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\200g\36\0\0\0\0\0\200g\36\0\0\0\0\0\200g\36\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\370y\2\0\0\0\0\0\370y\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\200\2\0\0\0\0\0\0\200\2\0\0\0\0\0\0\200\2\0\0\0\0\0\231y\31\0\0\0\0\0\231y\31\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0"..., 840, 64) = 840 <0.000002>
+8270  17:45:07.312232 fstat(3, {st_mode=S_IFREG|0755, st_size=2179544, ...}) = 0 <0.000002>
+8270  17:45:07.312266 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\200g\36\0\0\0\0\0\200g\36\0\0\0\0\0\200g\36\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\370y\2\0\0\0\0\0\370y\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\200\2\0\0\0\0\0\0\200\2\0\0\0\0\0\0\200\2\0\0\0\0\0\231y\31\0\0\0\0\0\231y\31\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0"..., 840, 64) = 840 <0.000002>
+8270  17:45:07.312314 mmap(NULL, 2232320, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xe7c426800000 <0.000004>
+8270  17:45:07.312324 mmap(0xe7c426828000, 1671168, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0xe7c426828000 <0.000004>
+8270  17:45:07.312335 mmap(0xe7c4269c0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0xe7c4269c0000 <0.000004>
+8270  17:45:07.312344 mmap(0xe7c426a0e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20d000) = 0xe7c426a0e000 <0.000007>
+8270  17:45:07.312825 mmap(0xe7c426a14000, 53248, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xe7c426a14000 <0.000004>
+8270  17:45:07.312894 close(3)          = 0 <0.000002>
+8270  17:45:07.313523 readlinkat(AT_FDCWD, "/lib", "usr/lib", 1023) = 7 <0.000003>
+8270  17:45:07.313535 readlinkat(AT_FDCWD, "/usr", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.313544 readlinkat(AT_FDCWD, "/usr/lib", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.313551 readlinkat(AT_FDCWD, "/usr/lib/libgcc_s.so.1", 0xffffc8362d00, 1023) = -1 ENOENT (No such file or directory) <0.000005>
+8270  17:45:07.313563 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/libgcc_s.so.1", F_OK) = 0 <0.000014>
+8270  17:45:07.313585 openat(AT_FDCWD, "/usr/x86_64-linux-gnu/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3 <0.000003>
+8270  17:45:07.313596 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\350\322\2\0\0\0\0\0\0\0\0\0@\08\0\r\0@\0\36\0\35\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\2006\0\0\0\0\0\0\2006\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0E4\2\0\0\0\0\0E4\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\200\2\0\0\0\0\0\0\200\2\0\0\0\0\0\0\200\2\0\0\0\0\08?\0\0\0\0\0\08?\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\6\0\0\0\220\315\2\0\0\0\0\0\220\315\2\0\0\0\0\0"..., 832) = 832 <0.000768>
+8270  17:45:07.314378 fstat(3, {st_mode=S_IFREG|0644, st_size=186984, ...}) = 0 <0.000002>
+8270  17:45:07.314395 mmap(NULL, 188416, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xe7c428148000 <0.000004>
+8270  17:45:07.314406 mmap(0xe7c42814c000, 147456, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0xe7c42814c000 <0.000007>
+8270  17:45:07.314421 mmap(0xe7c428170000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0xe7c428170000 <0.000004>
+8270  17:45:07.314432 mmap(0xe7c428174000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2c000) = 0xe7c428174000 <0.000003>
+8270  17:45:07.314912 close(3)          = 0 <0.000002>
+8270  17:45:07.316038 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428146000 <0.000005>
+8270  17:45:07.316180 mmap(NULL, 81920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428132000 <0.000004>
+8270  17:45:07.316263 gettid()          = 8270 <0.000002>
+8270  17:45:07.318999 mprotect(0xe7c426a0e000, 16384, PROT_READ) = 0 <0.000005>
+8270  17:45:07.319278 mprotect(0xe7c428174000, 4096, PROT_READ) = 0 <0.000003>
+8270  17:45:07.319302 mprotect(0xe7c428179000, 4096, PROT_READ) = 0 <0.000003>
+8270  17:45:07.319393 mprotect(0x65b000, 4096, PROT_READ) = 0 <0.000003>
+8270  17:45:07.320091 mprotect(0xe7c4281cd000, 8192, PROT_READ) = 0 <0.000004>
+8270  17:45:07.320699 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000002>
+8270  17:45:07.321040 getrandom("\xd2\xe5\xd5\x5c\x3d\xd5\xf5\xed", 8, GRND_NONBLOCK) = 8 <0.000002>
+8270  17:45:07.321407 munmap(0xe7c42817b000, 73728) = 0 <0.000009>
+8270  17:45:07.321423 futex(0xe7c4280a80a0, FUTEX_WAKE, 2147483647) = 1 <0.000004>
+8271  17:45:07.321434 <... futex resumed>) = 0 <0.023563>
+8270  17:45:07.322572 prctl(PR_SET_DUMPABLE, SUID_DUMP_DISABLE <unfinished ...>
+8271  17:45:07.322576 futex(0xe7c4280a80a0, FUTEX_WAIT, 4294967295, NULL <unfinished ...>
+8270  17:45:07.322583 <... prctl resumed>) = 0 <0.000007>
+8270  17:45:07.322610 mprotect(0x439000, 4096, PROT_READ) = 0 <0.000002>
+8270  17:45:07.322688 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.322697 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.322703 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.322975 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.322998 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323005 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323030 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323039 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323046 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323052 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323059 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323065 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323090 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323097 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323104 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323131 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323139 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323148 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323205 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323234 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323253 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323260 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323312 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000002>
+8270  17:45:07.323476 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c42818c000 <0.000004>
+8270  17:45:07.323503 futex(0xe7c4280a8900, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000001>
+8270  17:45:07.323662 readlinkat(AT_FDCWD, "/proc", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000003>
+8270  17:45:07.323676 readlinkat(AT_FDCWD, "/proc/self", "8270", 1023) = 4 <0.000004>
+8270  17:45:07.323686 readlinkat(AT_FDCWD, "/proc/8270", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000003>
+8270  17:45:07.323694 readlinkat(AT_FDCWD, "/proc/8270/status", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000005>
+8270  17:45:07.323706 getpid()          = 8270 <0.000001>
+8270  17:45:07.323713 getpid()          = 8270 <0.000001>
+8270  17:45:07.323719 getpid()          = 8270 <0.000001>
+8270  17:45:07.323725 getpid()          = 8270 <0.000001>
+8270  17:45:07.323731 getpid()          = 8270 <0.000001>
+8270  17:45:07.323737 getpid()          = 8270 <0.000001>
+8270  17:45:07.323743 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/proc/self/status", F_OK) = -1 ENOENT (No such file or directory) <0.000004>
+8270  17:45:07.323754 openat(AT_FDCWD, "/proc/self/status", O_RDONLY) = 3 <0.000005>
+8270  17:45:07.323776 read(3, "Name:\tqemu-x86_64\nUmask:\t0022\nState:\tR (running)\nTgid:\t8270\nNgid:\t0\nPid:\t8270\nPPid:\t8267\nTracerPid:\t8267\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t8270\nNSpid:\t8270\nNSpgid:\t8224\nNSsid:\t8223\nKthread:\t0\nVmPeak:\t  226424 kB\nVmSize:\t  226356 kB\nVm"..., 4095) = 1137 <0.000010>
+8270  17:45:07.323800 close(3)          = 0 <0.000002>
+8270  17:45:07.323841 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c42818b000 <0.000003>
+8270  17:45:07.324076 getppid()         = 8267 <0.000002>
+8270  17:45:07.324119 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c42818a000 <0.000002>
+8270  17:45:07.324362 readlinkat(AT_FDCWD, "/proc", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.324371 readlinkat(AT_FDCWD, "/proc/8267", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000004>
+8270  17:45:07.324380 readlinkat(AT_FDCWD, "/proc/8267/comm", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000005>
+8270  17:45:07.324391 getpid()          = 8270 <0.000001>
+8270  17:45:07.324397 getpid()          = 8270 <0.000001>
+8270  17:45:07.324403 getpid()          = 8270 <0.000001>
+8270  17:45:07.324409 getpid()          = 8270 <0.000001>
+8270  17:45:07.324415 getpid()          = 8270 <0.000001>
+8270  17:45:07.324420 getpid()          = 8270 <0.000001>
+8270  17:45:07.324426 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/proc/8267/comm", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.324434 openat(AT_FDCWD, "/proc/8267/comm", O_RDONLY) = 3 <0.000003>
+8270  17:45:07.324453 read(3, "strace\n", 255) = 7 <0.000002>
+8270  17:45:07.324468 close(3)          = 0 <0.000002>
+8270  17:45:07.324508 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428189000 <0.000002>
+8270  17:45:07.324547 readlinkat(AT_FDCWD, "/proc", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.324555 readlinkat(AT_FDCWD, "/proc/8267", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.324563 readlinkat(AT_FDCWD, "/proc/8267/cmdline", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000003>
+8270  17:45:07.324571 getpid()          = 8270 <0.000001>
+8270  17:45:07.324577 getpid()          = 8270 <0.000001>
+8270  17:45:07.324582 getpid()          = 8270 <0.000001>
+8270  17:45:07.324588 getpid()          = 8270 <0.000001>
+8270  17:45:07.324594 getpid()          = 8270 <0.000001>
+8270  17:45:07.324599 getpid()          = 8270 <0.000001>
+8270  17:45:07.324605 faccessat(AT_FDCWD, "/usr/x86_64-linux-gnu/proc/8267/cmdline", F_OK) = -1 ENOENT (No such file or directory) <0.000002>
+8270  17:45:07.324613 openat(AT_FDCWD, "/proc/8267/cmdline", O_RDONLY) = 3 <0.000002>
+8270  17:45:07.324631 read(3, "strace\0-f\0-tt\0-T\0-s\000256\0-o\0/home/jie-min/ransomware_pipeline/logs_arm/strace.log\0--\0qemu-x86_64\0-L\0/usr/x86_64-linux-gnu/\0/home/jie-min/Downloads/4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d.elf\0", 511) = 215 <0.000004>
+8270  17:45:07.324648 close(3)          = 0 <0.000002>
+8270  17:45:07.324806 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428188000 <0.000002>
+8270  17:45:07.324862 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428187000 <0.000002>
+8270  17:45:07.324915 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428186000 <0.000002>
+8270  17:45:07.324973 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428185000 <0.000002>
+8270  17:45:07.325009 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428184000 <0.000002>
+8270  17:45:07.325097 readlinkat(AT_FDCWD, "/proc", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.325105 readlinkat(AT_FDCWD, "/proc/8267", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.325113 readlinkat(AT_FDCWD, "/proc/8267/comm", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.325120 getpid()          = 8270 <0.000001>
+8270  17:45:07.325126 getpid()          = 8270 <0.000001>
+8270  17:45:07.325131 getpid()          = 8270 <0.000001>
+8270  17:45:07.325137 getpid()          = 8270 <0.000001>
+8270  17:45:07.325143 getpid()          = 8270 <0.000001>
+8270  17:45:07.325148 getpid()          = 8270 <0.000001>
+8270  17:45:07.325154 openat(AT_FDCWD, "/proc/8267/comm", O_RDONLY) = 3 <0.000002>
+8270  17:45:07.325162 read(3, "strace\n", 255) = 7 <0.000002>
+8270  17:45:07.325170 close(3)          = 0 <0.000002>
+8270  17:45:07.325183 readlinkat(AT_FDCWD, "/proc", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.325190 readlinkat(AT_FDCWD, "/proc/8267", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.325197 readlinkat(AT_FDCWD, "/proc/8267/cmdline", 0xffffc8362d00, 1023) = -1 EINVAL (Invalid argument) <0.000002>
+8270  17:45:07.325204 getpid()          = 8270 <0.000001>
+8270  17:45:07.325210 getpid()          = 8270 <0.000001>
+8270  17:45:07.325215 getpid()          = 8270 <0.000001>
+8270  17:45:07.325221 getpid()          = 8270 <0.000001>
+8270  17:45:07.325226 getpid()          = 8270 <0.000001>
+8270  17:45:07.325232 getpid()          = 8270 <0.000001>
+8270  17:45:07.325238 openat(AT_FDCWD, "/proc/8267/cmdline", O_RDONLY) = 3 <0.000002>
+8270  17:45:07.325245 read(3, "strace\0-f\0-tt\0-T\0-s\000256\0-o\0/home/jie-min/ransomware_pipeline/logs_arm/strace.log\0--\0qemu-x86_64\0-L\0/usr/x86_64-linux-gnu/\0/home/jie-min/Downloads/4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d.elf\0", 511) = 215 <0.000002>
+8270  17:45:07.325254 close(3)          = 0 <0.000002>
+8270  17:45:07.325297 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428183000 <0.000002>
+8270  17:45:07.325329 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428182000 <0.000002>
+8270  17:45:07.325362 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe7c428181000 <0.000002>
+8270  17:45:07.325407 kill(8267, SIGKILL
