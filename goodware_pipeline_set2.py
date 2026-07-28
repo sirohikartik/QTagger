@@ -69,26 +69,43 @@ def run_goodware(name, binary, args, outdir_suffix, timeout=300):
     print(f"[✅] {name} completed after {run_count} run(s), {total:.1f}s total. Logs in {outdir}")
 
 
+def ensure_gpg_key(uid="test@test.com", passphrase="test123"):
+    """Check if the GPG key exists locally; generate it only if missing."""
+    result = subprocess.run(
+        ["gpg", "--list-keys", uid],
+        capture_output=True
+    )
+    if result.returncode == 0:
+        print(f"[*] GPG key for {uid} already exists, skipping generation.")
+        return
+
+    print("[*] Generating dummy GPG key...")
+    try:
+        run_command(["gpg", "--batch", "--passphrase", passphrase, "--quick-generate-key", uid])
+    except subprocess.CalledProcessError:
+        print("[!] GPG key generation failed. Continuing, but the encrypt step may fail...")
+
+
 if __name__ == "__main__":
     os.makedirs(CORPUS_BASE, exist_ok=True)
 
     # 1. GPG (Encryption/Decryption - Different Libs than OpenSSL)
     # Uses libgcrypt instead of openssl libs. High file I/O + Crypto.
     seed_corpus("gpg_test", num_files=100)
-    
-    # Fix: Use only --quick-generate-key for non-interactive generation
-    print("[*] Generating dummy GPG key...")
-    try:
-        run_command(["gpg", "--batch", "--passphrase", "test123", "--quick-generate-key", "test@test.com"])
-    except subprocess.CalledProcessError:
-        print("[!] GPG key generation failed (might already exist). Continuing...")
-    
+
+    ensure_gpg_key(uid="test@test.com", passphrase="test123")
+
     # Encrypt one of the seeded files to generate activity
     target_file = os.path.join(CORPUS_BASE, "gpg_test", "data_0.txt")
     run_goodware(
         name="gpg",
         binary="/usr/bin/gpg",
-        args=["--batch", "--yes", "--passphrase", "test123", "-r", "test@test.com", "-e", target_file],
+        args=[
+            "--batch", "--yes", "--passphrase", "test123",
+            "--auto-key-locate", "local",   # don't try WKD/network lookup
+            "--trust-model", "always",      # skip trust prompts on a fresh key
+            "-r", "test@test.com", "-e", target_file
+        ],
         outdir_suffix="gpg",
         timeout=300
     )
@@ -98,7 +115,7 @@ if __name__ == "__main__":
     seed_corpus("rsync_src", num_files=5000)
     dest_dir = "/tmp/rsync_dest"
     os.makedirs(dest_dir, exist_ok=True)
-    
+
     run_goodware(
         name="rsync",
         binary="/usr/bin/rsync",
@@ -111,7 +128,7 @@ if __name__ == "__main__":
     # Unlike sequential tar/grep, this does random reads/writes and fsyncs.
     seed_corpus("sqlite_test", num_files=1)
     db_file = "/home/ubuntu/goodware_corpus_v2/sqlite_test/test.db"
-    
+
     # Wrapper to create DB and insert data for 60 seconds
     wrapper_script = "/home/ubuntu/sqlite_wrapper.sh"
     with open(wrapper_script, "w") as f:
@@ -136,11 +153,11 @@ done
     # 4. CURL (Network Download - Different from HTTP Server)
     # Active client-side network behavior. DNS + TCP + Write to disk.
     seed_corpus("curl_test", num_files=1)
-    
+
     run_goodware(
         name="curl",
         binary="/usr/bin/curl",
-        args=["-O", "https://releases.ubuntu.com/24.04/ubuntu-24.04.1-live-server-amd64.iso"], 
+        args=["-O", "https://releases.ubuntu.com/24.04/ubuntu-24.04.1-live-server-amd64.iso"],
         outdir_suffix="curl",
         timeout=300
     )
@@ -148,7 +165,7 @@ done
     # 5. STRESS-NG (CPU/Memory Pressure - Different from Ffmpeg)
     # Pure computational stress without media encoding logic.
     seed_corpus("stress_test", num_files=1)
-    
+
     run_goodware(
         name="stressng",
         binary="/usr/bin/stress-ng",
