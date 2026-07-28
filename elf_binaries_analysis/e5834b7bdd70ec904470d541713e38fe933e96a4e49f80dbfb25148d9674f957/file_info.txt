@@ -1,1 +1,0 @@
-ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=1cad98489b3c0068d9bf9e14df29aacaf126f333, stripped
