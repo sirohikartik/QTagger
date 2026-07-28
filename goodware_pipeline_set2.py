@@ -75,14 +75,20 @@ if __name__ == "__main__":
     # 1. GPG (Encryption/Decryption - Different Libs than OpenSSL)
     # Uses libgcrypt instead of openssl libs. High file I/O + Crypto.
     seed_corpus("gpg_test", num_files=100)
-    # Create a dummy key to avoid prompts
-    print("[*] Generating dummy GPG key...")
-    run_command(["gpg", "--batch", "--gen-key", "--passphrase", "test123", "--quick-generate-key", "test@test.com"])
     
+    # Fix: Use only --quick-generate-key for non-interactive generation
+    print("[*] Generating dummy GPG key...")
+    try:
+        run_command(["gpg", "--batch", "--passphrase", "test123", "--quick-generate-key", "test@test.com"])
+    except subprocess.CalledProcessError:
+        print("[!] GPG key generation failed (might already exist). Continuing...")
+    
+    # Encrypt one of the seeded files to generate activity
+    target_file = os.path.join(CORPUS_BASE, "gpg_test", "data_0.txt")
     run_goodware(
         name="gpg",
         binary="/usr/bin/gpg",
-        args=["--batch", "--yes", "--passphrase", "test123", "-r", "test@test.com", "-e", "/home/ubuntu/goodware_corpus_v2/gpg_test/data_0.txt"],
+        args=["--batch", "--yes", "--passphrase", "test123", "-r", "test@test.com", "-e", target_file],
         outdir_suffix="gpg",
         timeout=300
     )
@@ -134,7 +140,7 @@ done
     run_goodware(
         name="curl",
         binary="/usr/bin/curl",
-        args=["-O", "https://releases.ubuntu.com/24.04/ubuntu-24.04.1-live-server-amd64.iso"], # Large file for sustained download
+        args=["-O", "https://releases.ubuntu.com/24.04/ubuntu-24.04.1-live-server-amd64.iso"], 
         outdir_suffix="curl",
         timeout=300
     )
