@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import os
 import subprocess
 import sys
@@ -8,7 +9,7 @@ import time
 PIPELINE_DIR = "/home/ubuntu/ransomware_pipeline"
 MONITOR_SCRIPT = os.path.join(PIPELINE_DIR, "monitor.sh")
 CORPUS_BASE = "/home/ubuntu/goodware_corpus_v2"
-MIN_RUNTIME = 60  # seconds
+MIN_RUNTIME = 50  # seconds
 
 def run_command(cmd):
     print(f"[*] Running: {' '.join(cmd)}")
@@ -24,7 +25,7 @@ def seed_corpus(folder_name, num_files=10000):
             f.write(f"Sensitive data block {i}\n" * 10)
 
 def run_goodware(name, binary, args, outdir_suffix, timeout=300):
-    """Runs a goodware binary through the monitor."""
+    """Runs a goodware binary through the monitor, ensuring at least MIN_RUNTIME seconds total."""
     corpus_path = os.path.join(CORPUS_BASE, name)
     outdir = os.path.join(PIPELINE_DIR, f"logs_goodware_v2_{outdir_suffix}")
 
@@ -35,30 +36,38 @@ def run_goodware(name, binary, args, outdir_suffix, timeout=300):
         binary,
         outdir,
         corpus_path,
-        "--num-files", "0", 
+        "--num-files", "0",
         "--timeout", str(timeout),
         "--no-gui",
         "--"
     ] + args
-    
+
     overall_start = time.time()
     run_count = 0
 
     while True:
         run_count += 1
         elapsed = time.time() - overall_start
-        if elapsed >= MIN_RUNTIME:
-            break
-            
+        remaining = MIN_RUNTIME - elapsed
+
+        if run_count > 1:
+            print(f"[⏱] Only {elapsed:.1f}s elapsed — re-running to meet {MIN_RUNTIME}s minimum (run #{run_count})...")
+
         try:
             run_command(cmd)
         except subprocess.CalledProcessError as e:
             print(f"[!] {name} run #{run_count} failed: {e}")
-        
+
+        elapsed = time.time() - overall_start
+        if elapsed >= MIN_RUNTIME:
+            break
+
+        # Small pause between re-runs to avoid hammering
         time.sleep(1)
 
     total = time.time() - overall_start
-    print(f"[✅] {name} completed after {total:.1f}s. Logs in {outdir}")
+    print(f"[✅] {name} completed after {run_count} run(s), {total:.1f}s total. Logs in {outdir}")
+
 
 if __name__ == "__main__":
     os.makedirs(CORPUS_BASE, exist_ok=True)
@@ -67,6 +76,7 @@ if __name__ == "__main__":
     # Uses libgcrypt instead of openssl libs. High file I/O + Crypto.
     seed_corpus("gpg_test", num_files=100)
     # Create a dummy key to avoid prompts
+    print("[*] Generating dummy GPG key...")
     run_command(["gpg", "--batch", "--gen-key", "--passphrase", "test123", "--quick-generate-key", "test@test.com"])
     
     run_goodware(
