@@ -21,6 +21,7 @@ The framework auto-detects the architecture and executes the sample securely ins
 * **If running with custom arguments and a 60s timeout:**
   ```bash
   sudo ./monitor.sh run "ransomware_sample_pathway" ./logs_folder ./corpus --timeout 60 -- -p /tmp/targets -e
+```
 
 ### 3. Parse the logs into ML Features
 Process the generated execution logs into a structured CSV format ready for machine learning models:
