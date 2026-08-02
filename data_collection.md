@@ -1,40 +1,62 @@
-# ELF Binaries Ransomware Dataset
+# 📂 Comprehensive Dataset & Methodology Documentation
 
-## 📁 Schema & Structure
-
-### File Identifier
-- **Individual Samples:** Labeled using their respective **SHA-256 hash codes**.
-- **Master Dataset:** Consolidated under a primary root directory (`...`).
-
-### File Formats
-- **Raw Binaries:** Executable files in **ELF (Executable and Linkable Format)**, specifically tailored for x86_64 architectures.
-- **Derived Datasets:** Tabular summaries exported as **`.csv` files** containing engineered statistical features extracted via windowing and feature aggregation.
+This document provides a thorough breakdown of the datasets utilized in the pipeline, including file schemas, provenance, categorization, and the isolated execution environments used for behavioral analysis.
 
 ---
 
-## 🦠 Classes & Ransomware Families
-The dataset comprises targeted ELF x86_64 ransomware strains sourced from real-world threats, encompassing the following families:
-- **LockBit 5.0** (Multiple variants)
-- **Gunra**
-- **Qilin**
-- **01flip**
-- **Generic ELF Ransomware**
+## 🦠 1. ELF Binaries Ransomware (Wild-Type Samples)
+
+### 📋 Schema & Structure
+- **File Identifier:** Individual sample directories are named using their unique **SHA-256 hash codes**, while the primary master collection is categorized under `ransomware` inside the `test_set` directory.
+- **File Type:** Raw executables are stored in **`.elf` format**, while structured telemetry over time is logged in **`.csv` feature tables**.
+- **Class / Label:** Real-world, compiled ELF x86_64 ransomware families, including:
+  - **LockBit 5.0**
+  - **Gunra**
+  - **Qilin**
+  - **01flip**
+  - **Generic ELF Ransomware**
+- **Per-Class Counts:** One representative sample is used per family, except for **LockBit 5.0**, which utilizes two variant samples to capture behavioral diversity.
+
+### 🌐 Provenance & Collection
+- **Source / Origin:** Retrieved directly from **MalwareBazaar** 🕵️‍♂️ to guarantee authenticity and wild-type behavior.
+
+### 🛡️ Safety, Handling & Analysis Environment
+- **Virtualization Engine:** VMware Workstation Pro (Isolated Virtual Machine) 💻.
+- **Guest Operating System:** Ubuntu 24.04 LTS (x86_64) 🐧.
+- **Analysis Toolchain:** Automated monitoring via custom Bash shell scripts paired with a Python telemetry parser tracking system resource consumption, file modifications, and encryption velocity ⚡.
 
 ---
 
-## 🔍 Provenance & Collection
+## 🧪 2. Proof-of-Concept (PoC) Ransomware
 
-- **Source / Origin:** All malicious binaries were retrieved directly from **MalwareBazaar** to ensure verified, wild-type threat representation.
-- **Per-Class Distribution:** 
-  - 1 sample per unique family (Gunra, Qilin, 01flip, Generic).
-  - 2 samples representing distinct variants for **LockBit 5.0**.
+### 📋 Schema & Structure
+- **File Identifier:** Individual sample folders are labeled using their respective descriptive ransomware project/repository names, while the consolidated master collection is labeled as `ransomwarePoC` inside the `train_set` directory.
+- **File Type:** Executable ELF binaries (`.elf`) paired with CSV dataset files.
+- **Class / Label:** Educational, research, and open-source implementation variants of Linux ransomware.
+- **Per-Class Counts:** One sample/repository is utilized per family.
+
+### 🌐 Provenance & Collection
+- **Source / Origin:** Sourced from open-source repositories on **GitHub** 🐙.
+
+### 🛡️ Safety, Handling & Analysis Environment
+- **Virtualization Engine:** Canonical **Multipass** (lightweight cloud-init VM management) ☁️.
+- **Guest Operating System:** Ubuntu 24.04 LTS 🐧.
+- **Analysis Toolchain:** Shell automation scripts and Python-based log parsers 📊.
 
 ---
 
-## 🛡️ Safety, Handling & Analysis Environment
+## ✅ 3. Goodware (Legitimate Baseline Binaries)
 
-To ensure complete containment and operational security, all malware samples were executed and dynamically analyzed under strict isolation protocols:
+### 📋 Schema & Structure
+- **File Identifier:** Individual utility names (e.g., system tools, utilities, or standard binaries like `curl`, `rsync`, `sqlite`), while the master collection is labeled as `goodware` across both `train_set` and `test_set` directories.
+- **File Type:** Compiled `.elf` binaries and `.csv` parsed feature logs.
+- **Class / Label:** Standard Linux utility programs and command-line tools functioning as non-malicious baseline behavior.
+- **Per-Class Counts:** One sample per standard tool package.
 
-- **Host Platform:** VMware Workstation Pro / ESXi virtualization.
-- **Operating System:** Ubuntu 24.04 LTS (x86_64) clean environment.
-- **Toolchain:** Custom-built shell scripts paired with Python-based parsers to monitor behavioral telemetry, system calls, IO bursts, and file system modifications.
+### 🌐 Provenance & Collection
+- **Source / Origin:** Standard package repositories and open-source codebases via **GitHub** 🐙.
+
+### 🛡️ Safety, Handling & Analysis Environment
+- **Virtualization Engine:** Canonical **Multipass** ☁️.
+- **Guest Operating System:** Ubuntu 24.04 LTS 🐧.
+- **Analysis Toolchain:** Shell code and Python parser monitoring resource utilization metrics (e.g., VMRSS, file read/write speeds, network calls) to establish a distinct behavioral contrast against ransomware execution patterns 📈.
