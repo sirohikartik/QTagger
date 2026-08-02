@@ -14,7 +14,7 @@ from sklearn.metrics import (
 # CONFIG
 # ============================================================
 
-TEST_ROOT = Path("../test_set")
+TEST_ROOT = Path("../../../test_set")
 TRAIN_ROOT = TEST_ROOT
 
 N_ROWS = 100
@@ -142,11 +142,11 @@ if __name__ == "__main__":
             "Importance": rf_feat.feature_importances_
         }).sort_values("Importance", ascending=False)
         
-        top_10_features = importance["Feature"].iloc[:10].tolist()
+        top_30_features = importance["Feature"].iloc[:30].tolist()
         
-        # Step 2: Train RF on Top 10 features
-        X_train_top10 = X_train_full[top_10_features]
-        X_test_top10 = X_test_full[top_10_features]
+        # Step 2: Train RF on Top 30 features
+        X_train_top30 = X_train_full[top_30_features]
+        X_test_top30 = X_test_full[top_30_features]
         
         model = Pipeline([
             ("imputer", SimpleImputer(strategy="median")),
@@ -157,10 +157,10 @@ if __name__ == "__main__":
                 class_weight="balanced",
             )),
         ])
-        model.fit(X_train_top10, y_train)
+        model.fit(X_train_top30, y_train)
 
         # Window-level accuracy
-        pred = model.predict(X_test_top10)
+        pred = model.predict(X_test_top30)
         acc = accuracy_score(y_test, pred)
         print(f"\nWindow Accuracy: {acc:.4f}")
 
@@ -181,7 +181,7 @@ if __name__ == "__main__":
         for sample in sorted(test_df["sample_name"].unique()):
             subset = test_df[test_df["sample_name"] == sample]
             X = subset.drop(columns=DROP_COLUMNS)
-            X = X[top_10_features]
+            X = X[top_30_features]
             
             probs = model.predict(X)
             pred_label = pd.Series(probs).mode()[0]
