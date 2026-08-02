@@ -1,4 +1,4 @@
-T# Model Evaluation Report (Top 10 Features)
+# Model Evaluation Report (Top 10 Features)
 
 ## 📊 Overview & Configuration
 - **Task:** Binary classification (Goodware vs. Ransomware)
@@ -34,7 +34,7 @@ T# Model Evaluation Report (Top 10 Features)
     accuracy                           0.45       209
    macro avg       0.46      0.46      0.45       209
 weighted avg       0.46      0.45      0.46       209
-
+```
 ### Confusion Matrix
 | | Pred Goodware | Pred Ransomware |
 | :--- | :---: | :---: |
