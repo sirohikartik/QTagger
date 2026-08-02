@@ -1,0 +1,6 @@
+window_idx,window_start_s,bytes_read_per_sec,bytes_written_per_sec,rw_volume_ratio,file_deletion_rate,file_rename_rate,target_extension_velocity,seq_vs_random_disk_ratio,urandom_bytes_per_sec,mmap_brk_rate,mprotect_rate,futex_rate,net_packet_rate,net_byte_volume,unique_dest_ip_rate,dns_query_rate,connection_failure_rate,child_spawn_rate,execve_rate,syscall_sequence_entropy,io_burstiness_std,dir_ops,drop_rate,ransom_note_hits,library_call_rate_openssl,vmrss_kb,mean_file_entropy,time_to_first_encryption_s,encryption_slope,file_entropy_delta
+0,0.0,179100,360,497.5,0,0,0,20,0,24354411,180,0,0,0,0,0,40,10,10,2.0441,0.0,10,0,0,0,0,0.0,0.0,-11231.1301,0.0
+1,0.1,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0136,18.0,20,0,0,0,0,0.0,0.0,-11231.1301,0.0
+2,0.2,0,655350,0.0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0.2314,30885.0135,20,0,0,0,0,0.0,0.0,-11231.1301,0.0
+3,0.3,323500,323500,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0.1402,27130.3772,20,0,0,0,0,0.0,0.0,-11231.1301,0.0
+4,0.4,0,1020,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.3774,26152.1269,0,0,0,0,0,0.0,0.0,-11231.1301,0.0
