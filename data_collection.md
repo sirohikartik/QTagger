@@ -18,11 +18,11 @@ This document provides a thorough breakdown of the datasets utilized in the pipe
 - **Per-Class Counts:** One representative sample is used per family, except for **LockBit 5.0**, which utilizes two variant samples to capture behavioral diversity.
 
 ### 🌐 Provenance & Collection
-- **Source / Origin:** Retrieved directly from **MalwareBazaar** 🕵️‍♂️ to guarantee authenticity and wild-type behavior.
+- **Source / Origin:** Retrieved directly from **MalwareBazaar** to guarantee authenticity and wild-type behavior.
 
 ### 🛡️ Safety, Handling & Analysis Environment
-- **Virtualization Engine:** VMware Workstation Pro (Isolated Virtual Machine) 💻.
-- **Guest Operating System:** Ubuntu 24.04 LTS (x86_64) 🐧.
+- **Virtualization Engine:** VMware Workstation Pro (Isolated Virtual Machine).
+- **Guest Operating System:** Ubuntu 24.04 LTS (x86_64).
 - **Analysis Toolchain:** Automated monitoring via custom Bash shell scripts paired with a Python telemetry parser tracking system resource consumption, file modifications, and encryption velocity ⚡.
 
 ---
@@ -30,33 +30,33 @@ This document provides a thorough breakdown of the datasets utilized in the pipe
 ## 🧪 2. Proof-of-Concept (PoC) Ransomware
 
 ### 📋 Schema & Structure
-- **File Identifier:** Individual sample folders are labeled using their respective descriptive ransomware project/repository names, while the consolidated master collection is labeled as `ransomwarePoC` inside the `train_set` directory.
+- **File Identifier:** Individual sample folders are labeled using their respective descriptive ransomware project/repository names (**`c_cry`**, **`gocry`**, **`jimmy`**, **`lollocker`**, **`nooled`**), while the consolidated master collection is labeled as `ransomwarePoC` inside the `train_set` directory.
 - **File Type:** Executable ELF binaries (`.elf`) paired with CSV dataset files.
 - **Class / Label:** Educational, research, and open-source implementation variants of Linux ransomware.
 - **Per-Class Counts:** One sample/repository is utilized per family.
 
 ### 🌐 Provenance & Collection
-- **Source / Origin:** Sourced from open-source repositories on **GitHub** 🐙.
+- **Source / Origin:** Sourced from open-source repositories on **GitHub**.
 
 ### 🛡️ Safety, Handling & Analysis Environment
 - **Virtualization Engine:** Canonical **Multipass** (lightweight cloud-init VM management) ☁️.
-- **Guest Operating System:** Ubuntu 24.04 LTS 🐧.
-- **Analysis Toolchain:** Shell automation scripts and Python-based log parsers 📊.
+- **Guest Operating System:** Ubuntu 24.04 LTS.
+- **Analysis Toolchain:** Shell automation scripts and Python-based log parsers.
 
 ---
 
 ## ✅ 3. Goodware (Legitimate Baseline Binaries)
 
 ### 📋 Schema & Structure
-- **File Identifier:** Individual utility names (e.g., system tools, utilities, or standard binaries like `curl`, `rsync`, `sqlite`), while the master collection is labeled as `goodware` across both `train_set` and `test_set` directories.
+- **File Identifier:** Individual utility names (**`curl`**, **`gpg`**, **`rsync`**, **`sqlite`**, **`stressng`**), while the master collection is labeled as `goodware` across both `train_set` and `test_set` directories.
 - **File Type:** Compiled `.elf` binaries and `.csv` parsed feature logs.
 - **Class / Label:** Standard Linux utility programs and command-line tools functioning as non-malicious baseline behavior.
 - **Per-Class Counts:** One sample per standard tool package.
 
 ### 🌐 Provenance & Collection
-- **Source / Origin:** Standard package repositories and open-source codebases via **GitHub** 🐙.
+- **Source / Origin:** Standard package repositories and open-source codebases via **GitHub**.
 
 ### 🛡️ Safety, Handling & Analysis Environment
 - **Virtualization Engine:** Canonical **Multipass** ☁️.
-- **Guest Operating System:** Ubuntu 24.04 LTS 🐧.
-- **Analysis Toolchain:** Shell code and Python parser monitoring resource utilization metrics (e.g., VMRSS, file read/write speeds, network calls) to establish a distinct behavioral contrast against ransomware execution patterns 📈.
+- **Guest Operating System:** Ubuntu 24.04 LTS.
+- **Analysis Toolchain:** Shell code and Python parser monitoring resource utilization metrics (e.g., VMRSS, file read/write speeds, network calls) to establish a distinct behavioral contrast against ransomware execution patterns.
