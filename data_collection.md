@@ -21,8 +21,8 @@ This document provides a thorough breakdown of the datasets utilized in the pipe
 - **Source / Origin:** Retrieved directly from **MalwareBazaar** to guarantee authenticity and wild-type behavior.
 
 ### 🛡️ Safety, Handling & Analysis Environment
-- **Virtualization Engine:** VMware Workstation Pro (Isolated Virtual Machine).
-- **Guest Operating System:** Ubuntu 24.04 LTS (x86_64).
+- **Virtualization & Emulation Engine:** VMware running an ARM64 guest environment, leveraging **QEMU user-mode/system emulation** to execute **x86_64** binary payloads on ARM64 host hardware to bridge the architecture gap caused by ARM64 malware scarcity.
+- **Guest Operating System:** Ubuntu 24.04 LTS (ARM64).
 - **Analysis Toolchain:** Automated monitoring via custom Bash shell scripts paired with a Python telemetry parser tracking system resource consumption, file modifications, and encryption velocity ⚡.
 
 ---
@@ -39,7 +39,7 @@ This document provides a thorough breakdown of the datasets utilized in the pipe
 - **Source / Origin:** Sourced from open-source repositories on **GitHub**.
 
 ### 🛡️ Safety, Handling & Analysis Environment
-- **Virtualization Engine:** Canonical **Multipass** (lightweight cloud-init VM management) ☁️.
+- **Virtualization Engine:** Canonical **Multipass** (utilizing **QEMU/KVM** as the underlying hypervisor).
 - **Guest Operating System:** Ubuntu 24.04 LTS.
 - **Analysis Toolchain:** Shell automation scripts and Python-based log parsers.
 
@@ -57,6 +57,6 @@ This document provides a thorough breakdown of the datasets utilized in the pipe
 - **Source / Origin:** Standard package repositories and open-source codebases via **GitHub**.
 
 ### 🛡️ Safety, Handling & Analysis Environment
-- **Virtualization Engine:** Canonical **Multipass** ☁️.
+- **Virtualization Engine:** Canonical **Multipass** (utilizing **QEMU** as the underlying hypervisor).
 - **Guest Operating System:** Ubuntu 24.04 LTS.
 - **Analysis Toolchain:** Shell code and Python parser monitoring resource utilization metrics (e.g., VMRSS, file read/write speeds, network calls) to establish a distinct behavioral contrast against ransomware execution patterns.
