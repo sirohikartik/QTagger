@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QTagger+ · black slide deck</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #eef3fc;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .presentation {
+      max-width: 1300px;
+      width: 100%;
+      background: #000000;
+      padding: 1.8rem 1.8rem 1.2rem;
+      border: none;
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* top bar — flat black */
+    .slide-title-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .slide-title-bar h1 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #b8d6ff, #7bb3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .slide-title-bar h1 i {
+      -webkit-text-fill-color: #7bb3ff;
+      font-size: 2rem;
+    }
+    .slide-title-bar .meta {
+      background: #0d0d0d;
+      padding: 0.3rem 1.4rem;
+      border: 1px solid #1a1a1a;
+      font-size: 0.85rem;
+      color: #b6ceec;
+    }
+    .slide-title-bar .meta i {
+      margin-right: 6px;
+      color: #7bb3ff;
+    }
+
+    /* slide container */
+    .slide-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 380px;
+    }
+
+    .slide {
+      display: none;
+      animation: dissolveIn 0.5s ease;
+      flex-direction: column;
+      height: 100%;
+    }
+    .slide.active {
+      display: flex;
+    }
+
+    @keyframes dissolveIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .slide-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 0.6rem;
+    }
+    .slide-header i {
+      font-size: 2rem;
+      color: #7bb3ff;
+      width: 2.4rem;
+      text-align: center;
+    }
+    .slide-header h2 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: -0.01em;
+      color: #e6effa;
+    }
+    .slide-header .pill {
+      margin-left: auto;
+      background: #0d0d0d;
+      padding: 0.15rem 1.2rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #a8c6ed;
+      border: 1px solid #1a1a1a;
+    }
+
+    .slide-body {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #d3e2f5;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .slide-body p {
+      margin-bottom: 0.1rem;
+    }
+    .slide-body ul {
+      padding-left: 1.4rem;
+      margin: 0.2rem 0 0.3rem;
+    }
+    .slide-body li {
+      margin-bottom: 0.1rem;
+    }
+    .slide-body strong {
+      color: #b8d4ff;
+    }
+    .highlight {
+      background: #0d0d0d;
+      padding: 0.05rem 0.9rem;
+      font-weight: 500;
+      color: #b4d4ff;
+      display: inline-block;
+      border: 1px solid #1a1a1a;
+    }
+    .badge-dark {
+      background: #0d0d0d;
+      padding: 0.1rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #b0cef0;
+      border: 1px solid #1a1a1a;
+      display: inline-block;
+    }
+
+    /* chart rows */
+    .chart-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin: 0.3rem 0 0.1rem;
+      align-items: flex-end;
+    }
+    .chart-item {
+      flex: 1 1 200px;
+      min-width: 140px;
+    }
+    .chart-item .label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #b0cceb;
+      margin-bottom: 0.2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .bar-bg {
+      background: #0d0d0d;
+      height: 22px;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid #1a1a1a;
+    }
+    .bar-fill {
+      height: 100%;
+      transition: width 0.6s ease;
+      background: #4d7db0;
+      width: 0%;
+    }
+    .bar-fill.green { background: #3f8a6b; }
+    .bar-fill.orange { background: #b8773a; }
+    .bar-fill.purple { background: #7a5f9e; }
+    .bar-fill.red { background: #a54a4a; }
+    .bar-value {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #d3e2f5;
+      margin-left: 0.4rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    .mini-table {
+      width: 100%;
+      font-size: 0.8rem;
+      border-collapse: collapse;
+      background: #050505;
+      border: 1px solid #1a1a1a;
+    }
+    .mini-table td {
+      padding: 0.3rem 0.6rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .mini-table tr:last-child td { border-bottom: none; }
+    .mini-table .label { font-weight: 500; color: #b6d0ed; }
+    .green { color: #7fc9a0; }
+    .orange { color: #e6b87e; }
+
+    /* navigation — flat black */
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #1a1a1a;
+    }
+    .nav-btn {
+      background: #0d0d0d;
+      border: 1px solid #1a1a1a;
+      color: #b8d4ff;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-btn:hover {
+      background: #1a1a1a;
+      border-color: #333;
+    }
+    .nav-btn:disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+    }
+    .dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: #1a1a1a;
+      border: none;
+      cursor: pointer;
+      transition: 0.15s;
+      padding: 0;
+    }
+    .dot.active {
+      background: #7bb3ff;
+      transform: scale(1.2);
+    }
+    .dot:hover {
+      background: #4f7db0;
+    }
+    .slide-counter {
+      font-size: 0.8rem;
+      color: #8aacd0;
+    }
+
+    @media (max-width: 600px) {
+      .presentation { padding: 0.8rem; }
+      .slide-title-bar h1 { font-size: 1.4rem; }
+      .slide-header h2 { font-size: 1.3rem; }
+      .slide-body { font-size: 0.9rem; }
+      .two-col { grid-template-columns: 1fr; }
+      .chart-item { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="presentation">
+
+  <!-- header -->
+  <div class="slide-title-bar">
+    <h1><i class="fas fa-atom"></i> QTagger+ <span style="font-weight:300; font-size:1.5rem; -webkit-text-fill-color: #9abce6;">Team A</span></h1>
+    <div class="meta"><i class="far fa-calendar-alt"></i> August 2026 · <i class="fas fa-tag"></i> quantum–enhanced ransomware</div>
+  </div>
+
+  <!-- slide container -->
+  <div class="slide-container" id="slideContainer">
+
+    <!-- SLIDE 1: Intro -->
+    <div class="slide active" data-index="0">
+      <div class="slide-header">
+        <i class="fas fa-rocket"></i>
+        <h2>Introduction</h2>
+        <span class="pill">overview</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>Ransomware</strong> remains one of the most pervasive and rapidly evolving threats. Traditional ML models struggle with data size, class imbalance, and multi‑family complexity.</p>
+        <p><span class="highlight">QTagger+</span> introduces a quantum‑enhanced framework:</p>
+        <ul>
+          <li><i class="fas fa-microchip" style="width:1.3rem;"></i> Linux ARM64 + x86_64 behavioural analysis</li>
+          <li><i class="fas fa-brain"></i> QML: QSVM, VQC, quantum kernels (Qiskit, PennyLane, TFQ)</li>
+          <li><i class="fas fa-database"></i> Deep generative data augmentation</li>
+        </ul>
+        <p style="margin-top:0.3rem;"><span class="badge-dark"><i class="fas fa-arrow-right"></i> binary → multi‑class</span></p>
+        <p style="font-size:0.9rem; color:#a0bcdb;"><i class="fas fa-quote-left"></i> Processing high‑fidelity temporal execution features, automating secure binary execution.</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Previous Work -->
+    <div class="slide" data-index="1">
+      <div class="slide-header">
+        <i class="fas fa-history"></i>
+        <h2>Previous Work</h2>
+        <span class="pill">QTagger 2025</span>
+      </div>
+      <div class="slide-body">
+        <p>QTagger+ builds on the <strong>QTagger</strong> project (2025), extending quantum machine learning to large‑scale ransomware datasets.</p>
+        <ul>
+          <li><i class="fas fa-cube"></i> Pure quantum & hybrid classical‑quantum models</li>
+          <li><i class="fas fa-code-branch"></i> Qiskit · PennyLane · TensorFlow Quantum</li>
+          <li><i class="fas fa-chart-line"></i> QSVM, VQC, quantum kernel estimation</li>
+        </ul>
+        <div style="background:#0a0a0a; padding:0.5rem 1rem; margin-top:0.3rem; border-left:2px solid #4d7aa8;">
+          <i class="fas fa-quote-left" style="color:#7bb3ff;"></i> efficient, scalable, robust
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Methodology -->
+    <div class="slide" data-index="2">
+      <div class="slide-header">
+        <i class="fas fa-cogs"></i>
+        <h2>Methodology</h2>
+        <span class="pill">4 phases</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>Instrumentation</strong> · <strong>Feature extraction</strong> · <strong>Normalization</strong> · <strong>Classification</strong></p>
+        <p>Behavioural analysis: sandbox (QEMU), entropy monitoring, network, syscalls.</p>
+        <div style="background:#0a0a0a; padding:0.4rem 0.8rem; margin:0.3rem 0; border:1px solid #1a1a1a;">
+          <span style="font-weight:500;"><i class="far fa-clock"></i> 31 features every 100ms</span>
+          <div style="display:flex; flex-wrap:wrap; gap:0.2rem 0.8rem; font-size:0.85rem; margin-top:0.2rem;">
+            <span><i class="fas fa-hdd"></i> I/O</span>
+            <span><i class="fas fa-lock"></i> Crypto</span>
+            <span><i class="fas fa-microchip"></i> Memory/CPU</span>
+            <span><i class="fas fa-wifi"></i> Network</span>
+            <span><i class="fas fa-project-diagram"></i> Process</span>
+          </div>
+        </div>
+        <p><span class="highlight">Normalized</span> to 100 rows (down/up‑sample + interpolation).</p>
+        <p><i class="fas fa-robot"></i> Classical RF · <i class="fas fa-quantum"></i> Learnable QSVM · hybrid quantum→RF</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Experiment Design -->
+    <div class="slide" data-index="3">
+      <div class="slide-header">
+        <i class="fas fa-flask"></i>
+        <h2>Experiment Design</h2>
+        <span class="pill">dual‑arch</span>
+      </div>
+      <div class="slide-body">
+        <p><i class="fas fa-desktop"></i> <strong>Orchestration:</strong> monitor.sh + QEMU (ARM64 / x86_64).</p>
+        <p><i class="fas fa-file-alt"></i> Goodware corpus: <code style="background:#0d0d0d; padding:0.1rem 0.4rem; border:1px solid #1a1a1a;">openssl, ffmpeg, rsync, gpg, tar, curl …</code></p>
+        <p><i class="fas fa-skull"></i> Ransomware: 10ms windows (scarcity).</p>
+        <div style="background:#0a0a0a; padding:0.3rem 0.8rem; margin:0.3rem 0; border:1px solid #1a1a1a;">
+          <i class="fas fa-arrows-alt-h"></i> Sliding window (W=10, S=5) → mean/std/max/min
+        </div>
+        <p><span class="badge-dark">top 10 features</span> binary · <span class="badge-dark">top 30</span> multiclass · MinMaxScaler → [0,1]</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: Binary Results with charts -->
+    <div class="slide" data-index="4">
+      <div class="slide-header">
+        <i class="fas fa-divide"></i>
+        <h2>Binary Results</h2>
+        <span class="pill">real‑world test</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>Best:</strong> <span class="highlight">Quantum SVM</span> 73.68% accuracy · 100% ransomware recall</p>
+        <div class="two-col">
+          <div>
+            <div class="chart-item">
+              <div class="label"><span>Classical RF</span> <span>72.73%</span></div>
+              <div class="bar-bg"><div class="bar-fill green" style="width:72.73%;"></div></div>
+            </div>
+            <div class="chart-item">
+              <div class="label"><span>Quantum SVM</span> <span class="green">73.68%</span></div>
+              <div class="bar-bg"><div class="bar-fill" style="width:73.68%;"></div></div>
+            </div>
+            <div class="chart-item">
+              <div class="label"><span>Classical SVM</span> <span class="orange">25.84%</span></div>
+              <div class="bar-bg"><div class="bar-fill orange" style="width:25.84%;"></div></div>
+            </div>
+            <div class="chart-item">
+              <div class="label"><span>Hybrid RF</span> <span>44.02%</span></div>
+              <div class="bar-bg"><div class="bar-fill purple" style="width:44.02%;"></div></div>
+            </div>
+          </div>
+          <div>
+            <table class="mini-table">
+              <tr><td class="label">Model</td><td>Precision</td><td>Recall</td><td>F1</td></tr>
+              <tr><td>Classical RF</td><td>1.00</td><td>0.40</td><td>0.57</td></tr>
+              <tr><td><strong>QSVM</strong></td><td><span class="green">1.00</span></td><td><span class="green">0.36</span></td><td><span class="green">0.53</span></td></tr>
+              <tr><td>Classical SVM</td><td>0.27</td><td>0.37</td><td>0.31</td></tr>
+              <tr><td>Hybrid RF</td><td>0.43</td><td>0.77</td><td>0.56</td></tr>
+            </table>
+            <p style="font-size:0.8rem; margin-top:0.3rem;"><i class="fas fa-check-circle" style="color:#6fbf8a;"></i> QSVM: 100% recall for ransomware</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: Multiclass Results with charts -->
+    <div class="slide" data-index="5">
+      <div class="slide-header">
+        <i class="fas fa-layer-group"></i>
+        <h2>Multiclass Results</h2>
+        <span class="pill">3‑fold cross‑run</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>Classical RF</strong> top: 88.20% window accuracy · Macro‑F1 0.85</p>
+        <div class="two-col">
+          <div>
+            <div class="chart-item">
+              <div class="label"><span>Classical RF</span> <span class="green">88.20%</span></div>
+              <div class="bar-bg"><div class="bar-fill green" style="width:88.2%;"></div></div>
+            </div>
+            <div class="chart-item">
+              <div class="label"><span>QSVM (Quantum)</span> <span>84.53%</span></div>
+              <div class="bar-bg"><div class="bar-fill" style="width:84.53%;"></div></div>
+            </div>
+            <div class="chart-item">
+              <div class="label"><span>Classical SVM</span> <span>82.46%</span></div>
+              <div class="bar-bg"><div class="bar-fill purple" style="width:82.46%;"></div></div>
+            </div>
+            <div class="chart-item">
+              <div class="label"><span>Hybrid RF</span> <span class="orange">16.91%</span></div>
+              <div class="bar-bg"><div class="bar-fill red" style="width:16.91%;"></div></div>
+            </div>
+          </div>
+          <div>
+            <table class="mini-table">
+              <tr><td class="label">Model</td><td>Macro‑Prec.</td><td>Macro‑Recall</td><td>Macro‑F1</td></tr>
+              <tr><td><strong>Classical RF</strong></td><td><span class="green">0.84</span></td><td><span class="green">0.86</span></td><td><span class="green">0.85</span></td></tr>
+              <tr><td>QSVM</td><td>0.81</td><td>0.82</td><td>0.81</td></tr>
+              <tr><td>Classical SVM</td><td>0.78</td><td>0.76</td><td>0.77</td></tr>
+              <tr><td>Hybrid RF</td><td>0.12</td><td>0.15</td><td>0.13</td></tr>
+            </table>
+            <p style="font-size:0.8rem; margin-top:0.3rem;"><i class="fas fa-arrow-up" style="color:#6fbf8a;"></i> QSVM outperforms RBF SVM baseline</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: Discussion -->
+    <div class="slide" data-index="6">
+      <div class="slide-header">
+        <i class="fas fa-comment-dots"></i>
+        <h2>Discussion & Future</h2>
+        <span class="pill">challenges</span>
+      </div>
+      <div class="slide-body">
+        <ul>
+          <li><i class="far fa-clock"></i> <strong>Time crunch</strong> – limited iteration</li>
+          <li><i class="fas fa-memory"></i> 16GB RAM constraint, CAPE not installed</li>
+          <li><i class="fas fa-microchip"></i> ELF binaries: mostly x86_64 (ARM64 scarcity)</li>
+          <li><i class="fas fa-sliders-h"></i> x86_64 parsed at 10ms (future: unify monitor.sh)</li>
+        </ul>
+        <div style="background:#0a0a0a; padding:0.6rem 1rem; margin-top:0.4rem; border-left:2px solid #5f8fc9;">
+          <i class="fas fa-flask"></i> <strong>Future:</strong> CAPE sandbox integration · extended ARM64 corpus · improved data pipeline
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: Quantum models -->
+    <div class="slide" data-index="7">
+      <div class="slide-header">
+        <i class="fas fa-quantum"></i>
+        <h2>Quantum Models</h2>
+        <span class="pill">PennyLane + PyTorch</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>QSVM</strong> with learnable kernel:</p>
+        <div style="background:#0a0a0a; padding:0.5rem 0.8rem; font-family: monospace; font-size:0.9rem; margin:0.3rem 0; border:1px solid #1a1a1a;">
+          ℒ<sub>KTA</sub> = – ⟨K,T⟩<sub>F</sub> / (∥K∥<sub>F</sub>∥T∥<sub>F</sub>)
+        </div>
+        <ul>
+          <li><i class="fas fa-vector-square"></i> AngleEmbedding + StronglyEntanglingLayers</li>
+          <li><i class="fas fa-code-branch"></i> Hybrid: quantum → ExtraTrees</li>
+        </ul>
+        <p><span class="badge-dark"><i class="fas fa-check"></i> KTA alignment</span> improves separation</p>
+        <div style="background:#0a0a0a; padding:0.3rem 0.8rem; margin-top:0.2rem; border:1px solid #1a1a1a;">
+          <i class="fas fa-chart-simple"></i> Fixed Quantum Feature Map → Hilbert space observables
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: Features -->
+    <div class="slide" data-index="8">
+      <div class="slide-header">
+        <i class="fas fa-table"></i>
+        <h2>Features (31)</h2>
+        <span class="pill">behavioural</span>
+      </div>
+      <div class="slide-body">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.2rem 1rem; font-size:0.9rem;">
+          <span><i class="fas fa-hdd"></i> I/O: bytes R/W, rename, entropy</span>
+          <span><i class="fas fa-lock"></i> /dev/urandom, entropy delta</span>
+          <span><i class="fas fa-microchip"></i> mmap, mprotect, VmRSS</span>
+          <span><i class="fas fa-wifi"></i> packets, DNS, failures</span>
+          <span><i class="fas fa-sitemap"></i> child spawn, execve, syscall entropy</span>
+          <span><i class="fas fa-clock"></i> time to first encryption</span>
+          <span><i class="fas fa-arrows-spin"></i> I/O burstiness</span>
+          <span><i class="fas fa-file-signature"></i> ransom note heuristics</span>
+        </div>
+        <div style="margin-top:0.5rem; background:#0a0a0a; padding:0.2rem 0.8rem; font-size:0.8rem; border:1px solid #1a1a1a;">
+          <i class="fas fa-arrows-spin"></i> windowed: mean/std/max/min · sliding W=10, S=5
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- navigation -->
+  <div class="nav-controls">
+    <button class="nav-btn" id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Prev</button>
+    <div class="dots" id="dotsContainer"></div>
+    <button class="nav-btn" id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+    let current = 0;
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dotsContainer');
+
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.dataset.index = i;
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function goTo(index) {
+      if (index < 0) index = 0;
+      if (index >= total) index = total - 1;
+      if (index === current) return;
+
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+
+      prevBtn.disabled = (current === 0);
+      nextBtn.disabled = (current === total - 1);
+    }
+
+    function next() {
+      if (current < total - 1) goTo(current + 1);
+    }
+    function prev() {
+      if (current > 0) goTo(current - 1);
+    }
+
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); next(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prev(); }
+    });
+
+    goTo(0);
+  })();
+</script>
+</body>
+</html>
