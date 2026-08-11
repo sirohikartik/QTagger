@@ -1,0 +1,207 @@
+kartiksirohi@Kartiks-MacBook-Air models % python svm.py
+
+>>> Starting Binary SVM Task...
+
+==================== SVM RBF Grid Search for Binary SVM ====================
+Performing feature selection (Top 10)...
+Fitting 3 folds for each of 20 candidates, totalling 60 fits
+Best Params: {'svm__C': 10, 'svm__gamma': 'auto'}
+Best CV Accuracy: 0.9841
+Test Accuracy: 0.2584
+
+Classification Report:
+               precision    recall  f1-score   support
+
+    goodware       0.27      0.37      0.31        95
+  ransomware       0.24      0.17      0.20       114
+
+    accuracy                           0.26       209
+   macro avg       0.25      0.27      0.25       209
+weighted avg       0.25      0.26      0.25       209
+
+
+>>> Starting Multiclass SVM Task...
+
+--- Fold 1 ---
+
+==================== SVM RBF Grid Search for Multiclass SVM Fold 1 ====================
+Performing feature selection (Top 30)...
+Fitting 3 folds for each of 20 candidates, totalling 60 fits
+Best Params: {'svm__C': 100, 'svm__gamma': 'scale'}
+Best CV Accuracy: 0.8304
+Test Accuracy: 0.8947
+
+Classification Report:
+                                                                   precision    recall  f1-score   support
+
+4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d       0.51      0.95      0.67        19
+52fc723f7e0c4202c97ac5bc2add2d1d3daa5c3f84f3d459a6a005a3ae380119       0.90      1.00      0.95        19
+5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9       1.00      1.00      1.00        19
+90b06f07eb75045ea3d4ba6577afc9b58078eafeb2cdd417e2a88d7ccf0c0273       0.75      0.16      0.26        19
+cd27a31e618fe93df37603e5ece3352a91f27671ee73bdc8ce9ad793cad72a0f       1.00      0.89      0.94        19
+e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957       1.00      0.89      0.94        19
+                                                        goodware       0.98      0.99      0.98        95
+
+                                                        accuracy                           0.89       209
+                                                       macro avg       0.88      0.84      0.82       209
+                                                    weighted avg       0.91      0.89      0.88       209
+
+
+--- Fold 2 ---
+
+==================== SVM RBF Grid Search for Multiclass SVM Fold 2 ====================
+Performing feature selection (Top 30)...
+Fitting 3 folds for each of 20 candidates, totalling 60 fits
+Best Params: {'svm__C': 100, 'svm__gamma': 'scale'}
+Best CV Accuracy: 0.8182
+Test Accuracy: 0.7895
+
+Classification Report:
+                                                                   precision    recall  f1-score   support
+
+4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d       0.50      0.84      0.63        19
+52fc723f7e0c4202c97ac5bc2add2d1d3daa5c3f84f3d459a6a005a3ae380119       0.31      0.26      0.29        19
+5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9       1.00      1.00      1.00        19
+90b06f07eb75045ea3d4ba6577afc9b58078eafeb2cdd417e2a88d7ccf0c0273       0.50      0.16      0.24        19
+cd27a31e618fe93df37603e5ece3352a91f27671ee73bdc8ce9ad793cad72a0f       0.53      0.84      0.65        19
+e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957       1.00      1.00      1.00        19
+                                                        goodware       1.00      0.92      0.96        95
+
+                                                        accuracy                           0.79       209
+                                                       macro avg       0.69      0.72      0.68       209
+                                                    weighted avg       0.80      0.79      0.78       209
+
+
+--- Fold 3 ---
+
+==================== SVM RBF Grid Search for Multiclass SVM Fold 3 ====================
+Performing feature selection (Top 30)...
+Fitting 3 folds for each of 20 candidates, totalling 60 fits
+Best Params: {'svm__C': 100, 'svm__gamma': 'scale'}
+Best CV Accuracy: 0.8587
+Test Accuracy: 0.7895
+
+Classification Report:
+                                                                   precision    recall  f1-score   support
+
+4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d       0.50      0.84      0.63        19
+52fc723f7e0c4202c97ac5bc2add2d1d3daa5c3f84f3d459a6a005a3ae380119       0.20      0.11      0.14        19
+5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9       1.00      1.00      1.00        19
+90b06f07eb75045ea3d4ba6577afc9b58078eafeb2cdd417e2a88d7ccf0c0273       0.50      0.16      0.24        19
+cd27a31e618fe93df37603e5ece3352a91f27671ee73bdc8ce9ad793cad72a0f       0.51      0.95      0.67        19
+e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957       1.00      1.00      1.00        19
+                                                        goodware       1.00      0.93      0.96        95
+
+                                                        accuracy                           0.79       209
+                                                       macro avg       0.67      0.71      0.66       209
+                                                    weighted avg       0.79      0.79      0.77       209
+
+
+Mean Multiclass SVM Window Accuracy: 0.8246
+(env) kartiksirohi@Kartiks-MacBook-Air models % nvim rf.py
+(env) kartiksirohi@Kartiks-MacBook-Air models % python rf.py
+
+>>> Starting Binary Task...
+
+==================== Grid Search for Binary Classification ====================
+Performing feature selection (Top 10)...
+Selected Features: ['file_deletion_rate_min', 'time_to_first_encryption_s_min', 'seq_vs_random_disk_ratio_max', 'seq_vs_random_disk_ratio_mean', 'execve_rate_max', 'file_deletion_rate_max', 'syscall_sequence_entropy_min', 'file_deletion_rate_mean', 'rw_volume_ratio_min', 'window_start_s_std']
+Fitting 3 folds for each of 16 candidates, totalling 48 fits
+Best Params: {'rf__max_depth': None, 'rf__max_features': 'sqrt', 'rf__min_samples_split': 5, 'rf__n_estimators': 100}
+Best CV Accuracy: 0.9788
+Test Accuracy: 0.7273
+
+Classification Report:
+               precision    recall  f1-score   support
+
+    goodware       1.00      0.40      0.57        95
+  ransomware       0.67      1.00      0.80       114
+
+    accuracy                           0.73       209
+   macro avg       0.83      0.70      0.69       209
+weighted avg       0.82      0.73      0.70       209
+
+
+>>> Starting Cross-run Multiclass Task...
+
+--- Fold 1 ---
+
+==================== Grid Search for Multiclass Fold 1 ====================
+Performing feature selection (Top 30)...
+Selected Features: ['seq_vs_random_disk_ratio_min', 'futex_rate_mean', 'mprotect_rate_std', 'seq_vs_random_disk_ratio_mean', 'mprotect_rate_max', 'io_burstiness_std_mean', 'io_burstiness_std_std', 'seq_vs_random_disk_ratio_std', 'syscall_sequence_entropy_std', 'io_burstiness_std_max', 'seq_vs_random_disk_ratio_max', 'futex_rate_std', 'mprotect_rate_mean', 'syscall_sequence_entropy_min', 'futex_rate_max', 'mmap_brk_rate_max', 'bytes_read_per_sec_std', 'syscall_sequence_entropy_mean', 'syscall_sequence_entropy_max', 'bytes_read_per_sec_mean', 'bytes_read_per_sec_max', 'mmap_brk_rate_std', 'mmap_brk_rate_mean', 'time_to_first_encryption_s_max', 'window_start_s_min', 'window_start_s_mean', 'time_to_first_encryption_s_mean', 'window_start_s_max', 'time_to_first_encryption_s_min', 'window_start_s_std']
+Fitting 3 folds for each of 16 candidates, totalling 48 fits
+Best Params: {'rf__max_depth': None, 'rf__max_features': None, 'rf__min_samples_split': 2, 'rf__n_estimators': 100}
+Best CV Accuracy: 0.9186
+Test Accuracy: 0.8182
+
+Classification Report:
+                                                                   precision    recall  f1-score   support
+
+4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d       0.50      0.89      0.64        19
+52fc723f7e0c4202c97ac5bc2add2d1d3daa5c3f84f3d459a6a005a3ae380119       1.00      1.00      1.00        19
+5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9       1.00      1.00      1.00        19
+90b06f07eb75045ea3d4ba6577afc9b58078eafeb2cdd417e2a88d7ccf0c0273       0.50      0.11      0.17        19
+cd27a31e618fe93df37603e5ece3352a91f27671ee73bdc8ce9ad793cad72a0f       1.00      1.00      1.00        19
+e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957       0.50      1.00      0.67        19
+                                                        goodware       1.00      0.80      0.89        95
+
+                                                        accuracy                           0.82       209
+                                                       macro avg       0.79      0.83      0.77       209
+                                                    weighted avg       0.86      0.82      0.81       209
+
+
+--- Fold 2 ---
+
+==================== Grid Search for Multiclass Fold 2 ====================
+Performing feature selection (Top 30)...
+Selected Features: ['bytes_written_per_sec_max', 'io_burstiness_std_mean', 'io_burstiness_std_std', 'io_burstiness_std_max', 'mprotect_rate_std', 'futex_rate_mean', 'syscall_sequence_entropy_min', 'seq_vs_random_disk_ratio_mean', 'mprotect_rate_max', 'mprotect_rate_mean', 'seq_vs_random_disk_ratio_max', 'syscall_sequence_entropy_std', 'seq_vs_random_disk_ratio_std', 'futex_rate_std', 'syscall_sequence_entropy_mean', 'futex_rate_max', 'mmap_brk_rate_max', 'bytes_read_per_sec_mean', 'bytes_read_per_sec_std', 'syscall_sequence_entropy_max', 'bytes_read_per_sec_max', 'mmap_brk_rate_std', 'mmap_brk_rate_mean', 'time_to_first_encryption_s_max', 'time_to_first_encryption_s_mean', 'time_to_first_encryption_s_min', 'window_start_s_min', 'window_start_s_mean', 'window_start_s_max', 'window_start_s_std']
+Fitting 3 folds for each of 16 candidates, totalling 48 fits
+Best Params: {'rf__max_depth': 10, 'rf__max_features': None, 'rf__min_samples_split': 2, 'rf__n_estimators': 100}
+Best CV Accuracy: 0.8781
+Test Accuracy: 0.9139
+
+Classification Report:
+                                                                   precision    recall  f1-score   support
+
+4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d       0.57      0.21      0.31        19
+52fc723f7e0c4202c97ac5bc2add2d1d3daa5c3f84f3d459a6a005a3ae380119       1.00      1.00      1.00        19
+5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9       1.00      1.00      1.00        19
+90b06f07eb75045ea3d4ba6577afc9b58078eafeb2cdd417e2a88d7ccf0c0273       0.52      0.84      0.64        19
+cd27a31e618fe93df37603e5ece3352a91f27671ee73bdc8ce9ad793cad72a0f       1.00      1.00      1.00        19
+e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957       1.00      1.00      1.00        19
+                                                        goodware       1.00      1.00      1.00        95
+
+                                                        accuracy                           0.91       209
+                                                       macro avg       0.87      0.86      0.85       209
+                                                    weighted avg       0.92      0.91      0.90       209
+
+
+--- Fold 3 ---
+
+==================== Grid Search for Multiclass Fold 3 ====================
+Performing feature selection (Top 30)...
+Selected Features: ['file_rename_rate_max', 'io_burstiness_std_max', 'syscall_sequence_entropy_min', 'mprotect_rate_std', 'io_burstiness_std_mean', 'futex_rate_mean', 'io_burstiness_std_std', 'mprotect_rate_max', 'seq_vs_random_disk_ratio_mean', 'seq_vs_random_disk_ratio_max', 'futex_rate_std', 'mprotect_rate_mean', 'seq_vs_random_disk_ratio_std', 'syscall_sequence_entropy_std', 'bytes_read_per_sec_std', 'syscall_sequence_entropy_mean', 'bytes_read_per_sec_mean', 'futex_rate_max', 'syscall_sequence_entropy_max', 'bytes_read_per_sec_max', 'mmap_brk_rate_max', 'mmap_brk_rate_std', 'mmap_brk_rate_mean', 'time_to_first_encryption_s_max', 'time_to_first_encryption_s_min', 'window_start_s_min', 'window_start_s_max', 'window_start_s_mean', 'time_to_first_encryption_s_mean', 'window_start_s_std']
+Fitting 3 folds for each of 16 candidates, totalling 48 fits
+Best Params: {'rf__max_depth': 10, 'rf__max_features': None, 'rf__min_samples_split': 2, 'rf__n_estimators': 500}
+Best CV Accuracy: 0.8829
+Test Accuracy: 0.9139
+
+Classification Report:
+                                                                   precision    recall  f1-score   support
+
+4dc06ecee904b9165fa699b026045c1b6408cc7061df3d2a7bc2b7b4f0879f4d       0.57      0.21      0.31        19
+52fc723f7e0c4202c97ac5bc2add2d1d3daa5c3f84f3d459a6a005a3ae380119       1.00      1.00      1.00        19
+5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9       1.00      1.00      1.00        19
+90b06f07eb75045ea3d4ba6577afc9b58078eafeb2cdd417e2a88d7ccf0c0273       0.52      0.84      0.64        19
+cd27a31e618fe93df37603e5ece3352a91f27671ee73bdc8ce9ad793cad72a0f       1.00      1.00      1.00        19
+e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957       1.00      1.00      1.00        19
+                                                        goodware       1.00      1.00      1.00        95
+
+                                                        accuracy                           0.91       209
+                                                       macro avg       0.87      0.86      0.85       209
+                                                    weighted avg       0.92      0.91      0.90       209
+
+
+Mean Multiclass Window Accuracy: 0.8820
+
+Grid Search Completed.
