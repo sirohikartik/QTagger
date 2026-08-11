@@ -205,3 +205,330 @@ e5834b7bdd70ec904470d541713e38fe933e96a4e49f80dbfb25148d9674f957       1.00     
 Mean Multiclass Window Accuracy: 0.8820
 
 Grid Search Completed.
+
+
+================================================================================
+
+================================================================================
+>>> BINARY QSVM SEARCH WITH DETAILED RESULTS
+================================================================================
+Performing feature selection (Top 10)...
+Selected Features: ['syscall_sequence_entropy_mean', 'execve_rate_max', 'seq_vs_random_disk_ratio_mean', 'seq_vs_random_disk_ratio_max', 'bytes_read_per_sec_min', 'file_deletion_rate_mean', 'file_deletion_rate_max', 'syscall_sequence_entropy_min', 'window_start_s_std', 'rw_volume_ratio_min']
+
+======================================================================
+GRID SEARCH RESULTS
+======================================================================
+
+Testing: {'C': 1.0, 'lr': 0.01, 'n_layers': 2, 'n_qubits': 4}
+--------------------------------------------------
+  Accuracy:  0.2536
+  Precision: 0.2493
+  Recall:    0.2536
+  F1-Score:  0.2448
+
+Testing: {'C': 1.0, 'lr': 0.01, 'n_layers': 2, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.2536
+  Precision: 0.2493
+  Recall:    0.2536
+  F1-Score:  0.2448
+
+Testing: {'C': 1.0, 'lr': 0.01, 'n_layers': 3, 'n_qubits': 4}
+--------------------------------------------------
+  Accuracy:  0.3397
+  Precision: 0.3452
+  Recall:    0.3397
+  F1-Score:  0.3404
+
+Testing: {'C': 1.0, 'lr': 0.01, 'n_layers': 3, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.6172
+  Precision: 0.6238
+  Recall:    0.6172
+  F1-Score:  0.5927
+
+Testing: {'C': 1.0, 'lr': 0.03, 'n_layers': 2, 'n_qubits': 4}
+--------------------------------------------------
+  Accuracy:  0.5263
+  Precision: 0.5172
+  Recall:    0.5263
+  F1-Score:  0.5154
+
+Testing: {'C': 1.0, 'lr': 0.03, 'n_layers': 2, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099                                                                                                                                              Recall:    0.7081
+  F1-Score:  0.6699
+
+Testing: {'C': 1.0, 'lr': 0.03, 'n_layers': 3, 'n_qubits': 4}
+--------------------------------------------------
+  Accuracy:  0.3445
+  Precision: 0.3499
+  Recall:    0.3445
+  F1-Score:  0.3454
+
+Testing: {'C': 1.0, 'lr': 0.03, 'n_layers': 3, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099
+  Recall:    0.7081
+  F1-Score:  0.6699
+
+Testing: {'C': 10.0, 'lr': 0.01, 'n_layers': 2, 'n_qubits': 4}
+--------------------------------------------------
+  Accuracy:  0.7368
+  Precision: 0.8225
+  Recall:    0.7368
+  F1-Score:  0.7088
+
+Testing: {'C': 10.0, 'lr': 0.01, 'n_layers': 2, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099
+  Recall:    0.7081                                                                                                                                              F1-Score:  0.6699
+
+Testing: {'C': 10.0, 'lr': 0.01, 'n_layers': 3, 'n_qubits': 4}
+--------------------------------------------------                                                                                                               Accuracy:  0.2536
+  Precision: 0.2493
+  Recall:    0.2536
+  F1-Score:  0.2448
+
+Testing: {'C': 10.0, 'lr': 0.01, 'n_layers': 3, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099
+  Recall:    0.7081
+  F1-Score:  0.6699
+
+Testing: {'C': 10.0, 'lr': 0.03, 'n_layers': 2, 'n_qubits': 4}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099                                                                                                                                              Recall:    0.7081
+  F1-Score:  0.6699
+
+Testing: {'C': 10.0, 'lr': 0.03, 'n_layers': 2, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099
+  Recall:    0.7081
+  F1-Score:  0.6699
+
+Testing: {'C': 10.0, 'lr': 0.03, 'n_layers': 3, 'n_qubits': 4}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099
+  Recall:    0.7081
+  F1-Score:  0.6699
+
+Testing: {'C': 10.0, 'lr': 0.03, 'n_layers': 3, 'n_qubits': 8}
+--------------------------------------------------
+  Accuracy:  0.7081
+  Precision: 0.8099
+  Recall:    0.7081
+  F1-Score:  0.6699
+
+======================================================================
+BEST BINARY MODEL RESULTS
+======================================================================
+Best Params: {'C': 10.0, 'lr': 0.01, 'n_layers': 2, 'n_qubits': 4}
+Best Accuracy: 0.7368
+
+======================================================================
+BINARY QSVM - BEST MODEL DETAILED REPORT
+======================================================================
+
+Accuracy: 0.7368
+
+Detailed Per-Class Metrics:
+----------------------------------------------------------------------
+  goodware             | Precision: 1.0000 | Recall: 0.4211 | F1: 0.5926 | Support: 95
+  ransomware           | Precision: 0.6746 | Recall: 1.0000 | F1: 0.8057 | Support: 114
+
+Averages:
+----------------------------------------------------------------------                                                                                           Macro Avg    | Precision: 0.8373 | Recall: 0.7105 | F1: 0.6991                                                                                                 Weighted Avg | Precision: 0.8225 | Recall: 0.7368 | F1: 0.7088
+Confusion Matrix:
+----------------------------------------------------------------------
+            goodware  ransomware
+goodware          40          55
+ransomware         0         114
+
+================================================================================
+>>> MULTICLASS QSVM SEARCH WITH DETAILED RESULTS
+================================================================================
+
+======================================================================
+FOLD 1
+======================================================================
+Selected Features (first 5): ['seq_vs_random_disk_ratio_std', 'syscall_sequence_entropy_std', 'mprotect_rate_max', 'futex_rate_mean', 'mmap_brk_rate_max']...
+
+Testing params: {'n_qubits': 8, 'n_layers': 2, 'lr': 0.03, 'C': 10.0}
+
+Fold 1 Accuracy: 0.8612
+======================================================================
+MULTICLASS QSVM - FOLD 1 DETAILED REPORT
+======================================================================
+
+Accuracy: 0.8612
+
+Detailed Per-Class Metrics:
+----------------------------------------------------------------------
+  4dc06ecee904b9165fa6... | Precision: 0.4483 | Recall: 0.6842 | F1: 0.5417 | Support: 19
+  52fc723f7e0c4202c97a... | Precision: 1.0000 | Recall: 0.9474 | F1: 0.9730 | Support: 19
+  5677dfad26045e271272... | Precision: 0.8421 | Recall: 0.8421 | F1: 0.8421 | Support: 19
+  90b06f07eb75045ea3d4... | Precision: 0.5385 | Recall: 0.3684 | F1: 0.4375 | Support: 19
+  cd27a31e618fe93df376... | Precision: 0.8261 | Recall: 1.0000 | F1: 0.9048 | Support: 19
+  e5834b7bdd70ec904470... | Precision: 1.0000 | Recall: 0.7895 | F1: 0.8824 | Support: 19
+  goodware             | Precision: 1.0000 | Recall: 0.9684 | F1: 0.9840 | Support: 95
+
+Averages:
+----------------------------------------------------------------------
+  Macro Avg    | Precision: 0.8078 | Recall: 0.8000 | F1: 0.7950
+  Weighted Avg | Precision: 0.8777 | Recall: 0.8612 | F1: 0.8637
+
+Confusion Matrix:
+----------------------------------------------------------------------
+                         4dc06ecee904b9165fa6...  52fc723f7e0c4202c97a...  5677dfad26045e271272...  ...  cd27a31e618fe93df376...  e5834b7bdd70ec904470...  goodware
+4dc06ecee904b9165fa6...                       13                        0                        0  ...                        0                        0         0
+52fc723f7e0c4202c97a...                        1                       18                        0  ...                        0                        0         0
+5677dfad26045e271272...                        3                        0                       16  ...                        0                        0         0
+90b06f07eb75045ea3d4...                       12                        0                        0  ...                        0                        0         0
+cd27a31e618fe93df376...                        0                        0                        0  ...                       19                        0         0
+e5834b7bdd70ec904470...                        0                        0                        0  ...                        4                       15         0
+goodware                                       0                        0                        3  ...                        0                        0        92
+                                                                                                                                                               [7 rows x 7 columns]
+
+======================================================================
+FOLD 2
+======================================================================
+Selected Features (first 5): ['futex_rate_mean', 'mprotect_rate_max', 'mprotect_rate_mean', 'seq_vs_random_disk_ratio_std', 'bytes_read_per_sec_std']...
+
+Testing params: {'n_qubits': 8, 'n_layers': 2, 'lr': 0.03, 'C': 10.0}
+
+Fold 2 Accuracy: 0.8708
+
+======================================================================
+MULTICLASS QSVM - FOLD 2 DETAILED REPORT
+======================================================================
+
+Accuracy: 0.8708
+
+Detailed Per-Class Metrics:
+----------------------------------------------------------------------
+  4dc06ecee904b9165fa6... | Precision: 0.5000 | Recall: 0.7368 | F1: 0.5957 | Support: 19
+  52fc723f7e0c4202c97a... | Precision: 0.8889 | Recall: 0.8421 | F1: 0.8649 | Support: 19
+  5677dfad26045e271272... | Precision: 0.8636 | Recall: 1.0000 | F1: 0.9268 | Support: 19
+  90b06f07eb75045ea3d4... | Precision: 0.5000 | Recall: 0.2632 | F1: 0.3448 | Support: 19
+  cd27a31e618fe93df376... | Precision: 0.8500 | Recall: 0.8947 | F1: 0.8718 | Support: 19
+  e5834b7bdd70ec904470... | Precision: 1.0000 | Recall: 0.8421 | F1: 0.9143 | Support: 19
+  goodware             | Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000 | Support: 95
+
+Averages:
+----------------------------------------------------------------------
+  Macro Avg    | Precision: 0.8004 | Recall: 0.7970 | F1: 0.7883
+  Weighted Avg | Precision: 0.8730 | Recall: 0.8708 | F1: 0.8653
+
+Confusion Matrix:
+----------------------------------------------------------------------
+                         4dc06ecee904b9165fa6...  52fc723f7e0c4202c97a...  5677dfad26045e271272...  ...  cd27a31e618fe93df376...  e5834b7bdd70ec904470...  goodware
+4dc06ecee904b9165fa6...                       14                        0                        0  ...                        0                        0         0
+52fc723f7e0c4202c97a...                        0                       16                        0  ...                        3                        0         0
+5677dfad26045e271272...                        0                        0                       19  ...                        0                        0         0
+90b06f07eb75045ea3d4...                       14                        0                        0  ...                        0                        0         0
+cd27a31e618fe93df376...                        0                        2                        0  ...                       17                        0         0
+e5834b7bdd70ec904470...                        0                        0                        3  ...                        0                       16         0
+goodware                                       0                        0                        0  ...                        0                        0        95
+
+[7 rows x 7 columns]
+
+======================================================================
+FOLD 3
+======================================================================
+Selected Features (first 5): ['mprotect_rate_max', 'mprotect_rate_mean', 'seq_vs_random_disk_ratio_std', 'futex_rate_mean', 'bytes_read_per_sec_std']...
+
+Testing params: {'n_qubits': 8, 'n_layers': 2, 'lr': 0.03, 'C': 10.0}
+
+Fold 3 Accuracy: 0.8038
+
+======================================================================
+MULTICLASS QSVM - FOLD 3 DETAILED REPORT
+======================================================================
+
+Accuracy: 0.8038
+
+Detailed Per-Class Metrics:
+----------------------------------------------------------------------
+  4dc06ecee904b9165fa6... | Precision: 0.5000 | Recall: 0.6842 | F1: 0.5778 | Support: 19
+  52fc723f7e0c4202c97a... | Precision: 0.5556 | Recall: 0.5263 | F1: 0.5405 | Support: 19
+  5677dfad26045e271272... | Precision: 1.0000 | Recall: 0.7368 | F1: 0.8485 | Support: 19
+  90b06f07eb75045ea3d4... | Precision: 0.4167 | Recall: 0.2632 | F1: 0.3226 | Support: 19
+  cd27a31e618fe93df376... | Precision: 0.5600 | Recall: 0.7368 | F1: 0.6364 | Support: 19
+  e5834b7bdd70ec904470... | Precision: 1.0000 | Recall: 0.8947 | F1: 0.9444 | Support: 19
+  goodware             | Precision: 0.9794 | Recall: 1.0000 | F1: 0.9896 | Support: 95
+
+Averages:
+----------------------------------------------------------------------
+  Macro Avg    | Precision: 0.7159 | Recall: 0.6917 | F1: 0.6943
+  Weighted Avg | Precision: 0.8117 | Recall: 0.8038 | F1: 0.8016
+
+Confusion Matrix:
+----------------------------------------------------------------------
+                         4dc06ecee904b9165fa6...  52fc723f7e0c4202c97a...  5677dfad26045e271272...  ...  cd27a31e618fe93df376...  e5834b7bdd70ec904470...  goodware
+4dc06ecee904b9165fa6...                       13                        0                        0  ...                        1                        0         0
+52fc723f7e0c4202c97a...                        0                       10                        0  ...                        9                        0         0
+5677dfad26045e271272...                        0                        5                       14  ...                        0                        0         0
+90b06f07eb75045ea3d4...                       13                        0                        0  ...                        1                        0         0
+cd27a31e618fe93df376...                        0                        3                        0  ...                       14                        0         0
+e5834b7bdd70ec904470...                        0                        0                        0  ...                        0                       17         2
+goodware                                       0                        0                        0  ...                        0                        0        95
+
+[7 rows x 7 columns]
+
+======================================================================
+MULTICLASS QSVM - OVERALL SUMMARY
+======================================================================
+Individual Fold Accuracies: ['0.8612', '0.8708', '0.8038']
+Mean Accuracy: 0.8453
+Std Dev: 0.0296
+
+Aggregated Metrics Across All Folds:
+
+======================================================================
+MULTICLASS QSVM - AGGREGATED REPORT
+======================================================================
+
+Accuracy: 0.8453
+
+Detailed Per-Class Metrics:
+----------------------------------------------------------------------
+  4dc06ecee904b9165fa6... | Precision: 0.4819 | Recall: 0.7018 | F1: 0.5714 | Support: 57
+  52fc723f7e0c4202c97a... | Precision: 0.8148 | Recall: 0.7719 | F1: 0.7928 | Support: 57
+  5677dfad26045e271272... | Precision: 0.8909 | Recall: 0.8596 | F1: 0.8750 | Support: 57
+  90b06f07eb75045ea3d4... | Precision: 0.4857 | Recall: 0.2982 | F1: 0.3696 | Support: 57
+  cd27a31e618fe93df376... | Precision: 0.7353 | Recall: 0.8772 | F1: 0.8000 | Support: 57
+  e5834b7bdd70ec904470... | Precision: 1.0000 | Recall: 0.8421 | F1: 0.9143 | Support: 57
+  goodware             | Precision: 0.9930 | Recall: 0.9895 | F1: 0.9912 | Support: 285
+
+Averages:
+----------------------------------------------------------------------
+  Macro Avg    | Precision: 0.7717 | Recall: 0.7629 | F1: 0.7592
+  Weighted Avg | Precision: 0.8521 | Recall: 0.8453 | F1: 0.8436
+
+Confusion Matrix:
+----------------------------------------------------------------------
+                         4dc06ecee904b9165fa6...  52fc723f7e0c4202c97a...  5677dfad26045e271272...  ...  cd27a31e618fe93df376...  e5834b7bdd70ec904470...  goodware
+4dc06ecee904b9165fa6...                       40                        0                        0  ...                        1                        0         0
+52fc723f7e0c4202c97a...                        1                       44                        0  ...                       12                        0         0
+5677dfad26045e271272...                        3                        5                       49  ...                        0                        0         0
+90b06f07eb75045ea3d4...                       39                        0                        0  ...                        1                        0         0
+cd27a31e618fe93df376...                        0                        5                        0  ...                       50                        0         0
+e5834b7bdd70ec904470...                        0                        0                        3  ...                        4                       48         2
+goodware                                       0                        0                        3  ...                        0                        0       282
+
+[7 rows x 7 columns]
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+Binary Best Params: {'C': 10.0, 'lr': 0.01, 'n_layers': 2, 'n_qubits': 4}
+Binary Best Accuracy: 0.7368
+Multiclass Mean Accuracy: 0.8453
